@@ -34,20 +34,26 @@ JavaScript supports functional style of programming. If you want to learn more a
 ### **H**
 
 ### **I**IFE
+[IIFE][iife] is a short form of immediately invoked function expression. These are functions which get invoked along with their definition.
 
 ### **J**SON
+[JSON][json] is the defacto standard for message format used in communications over the Web.
 
 ### **K**
 
 ### **L**
 
-### **M**
+### **M**DN
+[MDN][mdn] is the official source of truth for all your JavaScript reference.
 
 ### **N**ode
+[NodeJS][node] is a JavaScript runtime which is built on top of Chrome's V8 JavaScript Engine.
 
 ### **O**bjects
+[Objects][objects] are the fundamental building blocks of any JavaScript program. It gives us the equivalence of Classes/Objects present in a Object Oriented Language like Java, C++.
 
 ### **P**rototypal Inheritance
+JavaScript supports inheritance through [prototype chaining][prototype-chain].
 
 ### **Q**
 
@@ -80,3 +86,9 @@ JavaScript supports functional style of programming. If you want to learn more a
 [event-loop]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/EventLoop
 [functional-light]: https://github.com/getify/Functional-Light-JS
 [generators]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function%2A
+[iife]: https://developer.mozilla.org/en-US/docs/Glossary/IIFE
+[json]: https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/JSON
+[node]: https://nodejs.org/en/
+[mdn]: https://developer.mozilla.org/bm/docs/Web/JavaScript
+[objects]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_Objects
+[prototype-chain]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Inheritance_and_the_prototype_chain
