@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>/post/a-z-of-javascript/</loc>
+    <lastmod>2017-09-06T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/post/front-end-analogies/</loc>
     <lastmod>2017-08-01T00:00:00+00:00</lastmod>
   </url>
@@ -59,14 +64,26 @@
   </url>
   
   <url>
+    <loc>/tags/javascript/</loc>
+    <lastmod>2017-09-06T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>/post/</loc>
-    <lastmod>2017-08-01T00:00:00+00:00</lastmod>
+    <lastmod>2017-09-06T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>/tags/</loc>
     <lastmod>2017-08-01T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/terminologies/</loc>
+    <lastmod>2017-09-06T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -84,7 +101,7 @@
   
   <url>
     <loc>/</loc>
-    <lastmod>2017-08-01T00:00:00+00:00</lastmod>
+    <lastmod>2017-09-06T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   

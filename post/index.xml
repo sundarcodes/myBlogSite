@@ -6,10 +6,21 @@
     <description>Recent content in Posts on sundarcodes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 01 Aug 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 06 Sep 2017 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>A-Z of JavaScript</title>
+      <link>/post/a-z-of-javascript/</link>
+      <pubDate>Wed, 06 Sep 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/post/a-z-of-javascript/</guid>
+      <description>This is my collection of A-to-Z terms that one should knowing if they are into serious javascript programming.
+Async/Await Async and Await are new features introduced in the language to make asynchronous code block look synchronous and more importantly make it more readable.
+Brendan Eich Brendan Eich is the creator of JavaScript. He created the language in a matter of 10 days when working for Netscape Navigator. Due credit to be given to him for creating this language.</description>
+    </item>
     
     <item>
       <title>Front End development Analogy</title>
