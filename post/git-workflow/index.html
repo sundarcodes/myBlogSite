@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+         
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Git workflow - my ramblings</title>
+        <style>
+
+    html body {
+        font-family: 'Raleway', sans-serif;
+        background-color: white;
+    }
+
+    :root {
+        --accent: red;
+        --border-width:  5px ;
+    }
+
+</style>
+
+
+<link rel="stylesheet" href="http://example.com//css/main.css">
+
+
+
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+
+
+ <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/solarized-dark.min.css"> 
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+ 
+
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+
+     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/go.min.js"></script>  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/haskell.min.js"></script>  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/kotlin.min.js"></script>  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/scala.min.js"></script>  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/swift.min.js"></script> 
+
+    <script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+<script>$(document).on('click', function() { $('.collapse').collapse('hide'); })</script>
+ <meta name="generator" content="Hugo 0.31.1" />
+        
+        
+        
+        
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-96880592-1"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments)};
+          gtag('js', new Date());
+
+          gtag('config', 'UA-96880592-1');
+        </script>
+        
+    </head>
+
+    <body>
+         
+        <nav class="navbar navbar-default navbar-fixed-top">
+
+            <div class="container">
+
+                <div class="navbar-header">
+
+                    <a class="navbar-brand visible-xs" href="#">Git workflow - my ramblings</a>
+
+                    <button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+
+                </div>
+
+                <div class="collapse navbar-collapse">
+
+                    
+                        <ul class="nav navbar-nav">
+                            
+                                <li><a href="/">About Me</a></li>
+                            
+                                <li><a href="/post/">Posts</a></li>
+                            
+                        </ul>
+                    
+
+                    
+                        <ul class="nav navbar-nav navbar-right">
+                            
+                                <li class="navbar-icon"><a href="https://github.com/sundarcodes/"><i class="fa fa-github"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://twitter.com/sundar_says/"><i class="fa fa-twitter"></i></a></li>
+                            
+                        </ul>
+                    
+
+                </div>
+
+            </div>
+
+        </nav>
+
+
+<main>
+
+    <div class="item">
+
+    
+    
+    
+
+    
+    
+
+    <h4><a href="/post/git-workflow/">Git workflow - my ramblings</a></h4>
+    <h5>April 8, 2017</h5>
+     <kbd class="item-tag">git</kbd>  <kbd class="item-tag">version-control</kbd>  <kbd class="item-tag">best-practices</kbd> 
+
+</div>
+
+
+    <br> <div class="text-justify">
+
+<p>In this post, I would be talking about the git workflow that could be adopted when you are working on a project all alone and also when you are working in a team. Before we start, lets try to understand what is Git and why it is becoming the leader in Version control/SCM (Software Configuration Management).</p>
+
+<h4 id="what-is-git">What is Git ?</h4>
+
+<p>Git is a version control system with a de-centralized approach to source control. This means you don&rsquo;t really need a centralized server to work with instead you could have your own local version control system and push to a storage area whenever you feel like. Git was developed by Linus Torvalds, the same guy who wrote Linux Operating System. Git was developed out of frustration as Linus found the existing Source Control Systems were pathetic when it came to managing/collaborating across huge team of developers. If you like to know more, listen to <a href="https://www.youtube.com/watch?v=4XpnKHJAok8">talk</a> by Linus himself on git.</p>
+
+<h4 id="want-to-get-your-hands-dirty-on-git">Want to get your hands dirty on git ?</h4>
+
+<p>If you are completely new to git, I would recommend you to just try out this 15 minute <a href="https://try.github.io/levels/1/challenges/2">git tutorial</a> so that whatever I have written below would make sense.</p>
+
+<h2 id="workflow-when-you-working-as-a-single-man-army">Workflow when you working as a single man army</h2>
+
+<p>The first step would be creating a git repository with the default master branch in a hosting server (<a href="https://github.com/">github</a>/<a href="https://gitlab.com/">gitlab</a>/<a href="https://bitbucket.org/">bitbucket</a>). <strong>Master</strong> branch should always have the copy of the code which is going to go to production. Now create a <strong>develop</strong> branch, which at any point of time would be the working branch for all the new features you would be adding and this should be in sync with the master branch throughout.</p>
+
+<h4 id="working-on-a-feature">Working on a feature</h4>
+
+<p>Now, let&rsquo;s say you are going to work on a new feature or enhancement. Create a branch with the feature enhancement name from the <strong>develop</strong> branch. For example, if the feature you are going to work is <strong>featureA</strong>, create a branch from <strong>develop</strong> and name it as <strong>develop-featureA</strong>.
+Keep working on this branch till you have completed the development. Once you feel, you are done with your unit/integrating testing and feel its ready for production, submit a PR (pull request) from <strong>develop-featureA</strong> branch to <strong>develop</strong> branch. I am insisting on a PR instead of a merge as you could leverage the review of your peers/client or even you yourself could take that extra mile in reviewing your code from the stand point of a reviewer instead of a developer. Tag this branch with the release name/version and push it to production whenever it needs to. After it has been deployed to production, merge the tagged version to master.</p>
+
+<h4 id="working-on-a-production-defect">Working on a production defect</h4>
+
+<p>Its very normal that we would need to send a patch to fix an urgent production issue. During this scenario, the workflow would be this. Sync up your local master and remote master branch. Create a branch from master with the name <strong>hot-fix-A</strong> and implement the hot fix. Once tested, submit a PR From the <strong>hot-fix-A</strong> branch to <strong>master</strong> branch. Review or have some one review it and merge the PR. Now, merge the master branch changes to the feature branch you are working on and continue working.</p>
+
+<h2 id="workflow-when-you-working-in-a-team">Workflow when you working in a team</h2>
+
+<p>When you are working in a team, the first step is to create a repo in a hosting server with the default master branch. Create another branch and name it as <strong>develop</strong>. Now ask your fellow developers to fork this repo. This is with respect to the initial setup. If you team has junior developers who are not experienced, this task of setting up a branch should be done by the senior dev or the team lead. The team lead should have all access to the master repo but the junior developers should just be able to colloborate by forking and submitting PRs.</p>
+
+<h4 id="working-on-a-feature-1">Working on a feature</h4>
+
+<p>Now lets say your junior devs are working on a feature, they have to create a branch say <strong>feature-aa</strong> in their own repo and keep working along. Once it has been implemented and passed all the tests, the developer has to send a PR from his <strong>feature-aa</strong> branch to the <strong>develop</strong> branch in hosting server/central repo. This PR will undergo the review cycle and the Tech lead/senior dev should merge it with <strong>develop</strong> branch if it is good to go. If multiple devs are working on the same feature, they must collaborate amongst themselves by syncing their changes frequently. The code must be merged to <strong>develop</strong> when it is deemed fit for QA/prod deployment. Other developers working on different features must be syncing with <strong>develop</strong> on a regular/daily basis so that they are up to date with the latest developments. Now when the code is release ready, tag it with the release name. You could continue working on other features in a similar fashion described in this section. Once your code has been deployed to production, merge that tag to <strong>master</strong> and you all set.</p>
+
+<h4 id="working-on-a-production-defect-1">Working on a production defect</h4>
+
+<p>Now, you have deployed your code to production and out pops a high severity bug. The workflow for this is similar to the one that we had when you are working all alone in a project. You just create a branch from <strong>master</strong> called <strong>hot-fix</strong>, do the fix, test it. Submit a PR to merge it with develop. Deploy the <strong>hot-fix</strong> branch to production. Once its confirmed to be working fine, merge it with <strong>master</strong> and delete the <strong>hot-fix</strong> branch.</p>
+
+<h2 id="summary">Summary</h2>
+
+<p>This git workflow is based on my experience working both in solo projects and also working in a team enviornment. There are lot of blogs which gives you more variations of a git workflow <a href="http://www.bitsnbites.eu/a-stable-mainline-branching-model-for-git/">here</a>, <a href="http://nvie.com/posts/a-successful-git-branching-model/">here</a> and <a href="https://www.atlassian.com/git/tutorials/comparing-workflows">here</a>. Read through all of them and choose whichever suits you best !!</p>
+</div>
+
+    
+    
+
+    
+
+    
+
+        <h4 class="page-header">Comments</h4>
+
+        <div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "sundarcodes" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    
+
+</main>
+
+        <footer>
+
+            <p class="copyright text-muted">&copy;2017</p>
+
+        </footer>
+       
+    </body>
+
+</html>
+

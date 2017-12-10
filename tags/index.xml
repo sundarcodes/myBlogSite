@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on sundarcodes</title>
+    <link>http://example.com/tags/</link>
+    <description>Recent content in Tags on sundarcodes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 01 Aug 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://example.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Analogy</title>
+      <link>http://example.com/tags/analogy/</link>
+      <pubDate>Tue, 01 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.com/tags/analogy/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Angular</title>
+      <link>http://example.com/tags/angular/</link>
+      <pubDate>Sat, 25 Mar 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.com/tags/angular/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Angularjs</title>
+      <link>http://example.com/tags/angularjs/</link>
+      <pubDate>Sat, 25 Mar 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.com/tags/angularjs/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Best Practices</title>
+      <link>http://example.com/tags/best-practices/</link>
+      <pubDate>Sat, 08 Apr 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.com/tags/best-practices/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Front End Basics</title>
+      <link>http://example.com/tags/front-end-basics/</link>
+      <pubDate>Tue, 01 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.com/tags/front-end-basics/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Git</title>
+      <link>http://example.com/tags/git/</link>
+      <pubDate>Sat, 08 Apr 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.com/tags/git/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Version Control</title>
+      <link>http://example.com/tags/version-control/</link>
+      <pubDate>Sat, 08 Apr 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.com/tags/version-control/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Web Development</title>
+      <link>http://example.com/tags/web-development/</link>
+      <pubDate>Tue, 01 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.com/tags/web-development/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
