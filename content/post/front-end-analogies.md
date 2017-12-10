@@ -30,4 +30,4 @@ I am going to compare building a website to building a house where :
 **UI Engineers** would be the persons who would be involved in the engineering works inside the house. These could be your electricians, plumbers, carpenters. Similarly, UI Engineers would be developers who apart from having a basic knowledge in HTML, CSS should have an strong knowledge on JavaScript and also preferably knowledge on any modern front end framework.
 
 
-## To Be Continued.... :) 
+## To Be Extended .... :) 
