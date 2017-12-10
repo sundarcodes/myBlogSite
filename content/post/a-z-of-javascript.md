@@ -2,7 +2,7 @@
 title: "A-Z of JavaScript"
 date: 2017-09-06
 tags: ["JavaScript", "terminologies"]
-draft: true
+draft: false
 ---
 
 This is my collection of A-to-Z terms that one should knowing if they are into serious javascript programming.
@@ -32,6 +32,7 @@ JavaScript supports functional style of programming. If you want to learn more a
 [Generators][generators] are functions that could save context across re-entrances.
 
 ### **H**
+--To be Added--
 
 ### **I**IFE
 [IIFE][iife] is a short form of immediately invoked function expression. These are functions which get invoked along with their definition.
@@ -40,8 +41,10 @@ JavaScript supports functional style of programming. If you want to learn more a
 [JSON][json] is the defacto standard for message format used in communications over the Web.
 
 ### **K**
+--To be Added--
 
 ### **L**
+--To be Added--
 
 ### **M**DN
 [MDN][mdn] is the official source of truth for all your JavaScript reference.
@@ -56,27 +59,39 @@ JavaScript supports functional style of programming. If you want to learn more a
 JavaScript supports inheritance through [prototype chaining][prototype-chain].
 
 ### **Q**
+--To be Added--
 
 ### **R**
+--To be Added--
 
 ### **S**ervice Worker
 [Service Workers][service-worker] can be thought of as proxies to your backend and enables great user experiences like offline capability, optimistic loading of resources etc.
 
 ### **T**
+--To be Added--
 
 ### **U**
+--To be Added--
 
 ### **V**
+--To be Added--
 
 ### **W**eb Assembly/**W**eb Worker
 [Web Assembly][web-assembly] is mechanism or a provision by which browsers can execute assembly/compiled code. This opens up a whole lot of new things that could possible in a web app escpecially performance intrinsic ones like gaming, image processing etc all happening inside a browser.
 [Web Workers][web-worker] are means to achieve multi threading in browsers where we could do execute JS in parallel without affecting the main thread.
 
 ### **X**
+--To be Added--
 
 ### **Y**
+--To be Added--
 
 ### **Z**
+--To be Added--
+
+--------
+
+Would love to hear your feedback and suggestions for the **To Be Added** letters and also any terms that I have missed out...
 
 [async]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function
 [await]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/await
