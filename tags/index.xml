@@ -30,6 +30,15 @@
     </item>
     
     <item>
+      <title>Angular 2&#43;</title>
+      <link>/tags/angular-2&#43;/</link>
+      <pubDate>Fri, 01 Dec 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/angular-2&#43;/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Angularjs</title>
       <link>/tags/angularjs/</link>
       <pubDate>Sat, 25 Mar 2017 00:00:00 +0000</pubDate>
@@ -71,6 +80,51 @@
       <pubDate>Wed, 06 Sep 2017 00:00:00 +0000</pubDate>
       
       <guid>/tags/javascript/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Mobx</title>
+      <link>/tags/mobx/</link>
+      <pubDate>Fri, 01 Dec 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/mobx/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Ngrx</title>
+      <link>/tags/ngrx/</link>
+      <pubDate>Fri, 01 Dec 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/ngrx/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Redux</title>
+      <link>/tags/redux/</link>
+      <pubDate>Fri, 01 Dec 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/redux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Rxjs</title>
+      <link>/tags/rxjs/</link>
+      <pubDate>Fri, 01 Dec 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/rxjs/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>State Management</title>
+      <link>/tags/state-management/</link>
+      <pubDate>Fri, 01 Dec 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/state-management/</guid>
       <description></description>
     </item>
     
