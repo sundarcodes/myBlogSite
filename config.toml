@@ -1,9 +1,9 @@
 baseURL = "http://example.com/"
 languageCode = "en-us"
-title = "Minimal"
-theme = "minimal"
-disqusShortname = "username" # delete this to disable disqus comments
-googleAnalytics = ""
+title = "sundarcodes"
+theme = ""
+disqusShortname = "sundarcodes" # delete this to disable disqus comments
+googleAnalytics = "UA-96880592-1"
 accent = "grey"
 
 [params]
