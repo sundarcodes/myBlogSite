@@ -4,10 +4,9 @@ title = "sundarcodes"
 theme = ""
 disqusShortname = "sundarcodes" # delete this to disable disqus comments
 googleAnalytics = "UA-96880592-1"
-accent = "grey"
 
 [params]
-    author = "Calin Tataru"
+    author = "Sundar"
     description = "Personal blog theme powered by Hugo"
     githubUsername = "sundarcodes"
     accent = "red"
