@@ -12,14 +12,14 @@
     
     
     <item>
-      <title>State Management in Angular 2&#43; apps</title>
-      <link>/post/ui-state-management/</link>
+      <title>State Management in Angular 2&#43; apps - Part 1</title>
+      <link>/post/ui-state-management-part-1/</link>
       <pubDate>Fri, 01 Dec 2017 00:00:00 +0000</pubDate>
       
-      <guid>/post/ui-state-management/</guid>
-      <description>This is part-1 of the blog series where I would be trying to explain state management in Angular 2+ app using different strategies.
+      <guid>/post/ui-state-management-part-1/</guid>
+      <description>This is part-1 of the blog series where I would be trying to explain state management in Angular 2+ app using different strategies along with their pros and cons.
 In this part, I will try to demystify the term state, how to identify state and why do we need to manage state. So lets get started&amp;hellip;
-How do you define state or what is state of an app ? I have seen developers who just have Angular(1 &amp;amp; 2+) background struggle to answer this question as they haven&amp;rsquo;t encountered the term state while developing apps.</description>
+How do you define state or what is state of an app ? I have seen junior developers who just have Angular(1 &amp;amp; 2+) background struggle to answer this question as they haven&amp;rsquo;t encountered the term state while building apps.</description>
     </item>
     
   </channel>

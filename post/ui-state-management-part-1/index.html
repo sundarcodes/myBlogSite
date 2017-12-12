@@ -4,7 +4,7 @@
          
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>State Management in Angular 2&#43; apps</title>
+        <title>State Management in Angular 2&#43; apps - Part 1</title>
         <style>
 
     html body {
@@ -82,7 +82,7 @@
 
                 <div class="navbar-header">
 
-                    <a class="navbar-brand visible-xs" href="#">State Management in Angular 2&#43; apps</a>
+                    <a class="navbar-brand visible-xs" href="#">State Management in Angular 2&#43; apps - Part 1</a>
 
                     <button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse">
                         <span class="icon-bar"></span>
@@ -132,7 +132,7 @@
     
     
 
-    <h4><a href="/post/ui-state-management/">State Management in Angular 2&#43; apps</a></h4>
+    <h4><a href="/post/ui-state-management-part-1/">State Management in Angular 2&#43; apps - Part 1</a></h4>
     <h5>December 1, 2017</h5>
      <kbd class="item-tag">State Management</kbd>  <kbd class="item-tag">RxJS</kbd>  <kbd class="item-tag">Mobx</kbd>  <kbd class="item-tag">Redux</kbd>  <kbd class="item-tag">ngRx</kbd>  <kbd class="item-tag">Angular 2&#43;</kbd> 
 
@@ -141,34 +141,44 @@
 
     <br> <div class="text-justify">
 
-<p>This is part-1 of the blog series where I would be trying to explain state management in Angular 2+ app using different strategies.</p>
+<p>This is part-1 of the blog series where I would be trying to explain state management in Angular 2+ app using different strategies along with their pros and cons.</p>
 
 <p>In this part, I will try to demystify the term state, how to identify state and why do we need to manage state. So lets get started&hellip;</p>
 
 <h3 id="how-do-you-define-state-or-what-is-state-of-an-app">How do you define state or what is state of an app ?</h3>
 
-<p>I have seen developers who just have Angular(1 &amp; 2+) background struggle to answer this question as they haven&rsquo;t encountered the term <strong>state</strong> while developing apps. This is where getting to know different alternative like React, Vue helps. React is built on the philosophy of UI is a function of state. Please read <a href="http://beletsky.net/2016/04/the-functional-approach-to-ui.html">this</a> to understand more about the philosophy.</p>
+<p>I have seen junior developers who just have Angular(1 &amp; 2+) background struggle to answer this question as they haven&rsquo;t encountered the term <strong>state</strong> while building apps. This is where getting to know different alternative like React or Vue helps. React is built on the philosophy of UI is a function of state. Please read <a href="http://beletsky.net/2016/04/the-functional-approach-to-ui.html">this</a> to understand more about the philosophy.</p>
 
-<p>Coming back to the question, a state as per the definition represent an app data at a given point of time.
+<p>Coming back to the question, a state as per the definition represent an app&rsquo;s data at a given point of time.
 Programatically speaking, a state is nothing but the variables - objects, number, arrays that you use in your JS code to represent the data to be displayed in the UI. So now you can relate to the <code>UI=f(state)</code> principle which implies UI changes as state changes.</p>
 
-<p>Lets take a sample app and try to decipher the state based on the above lines. Incidentally, we would be also using same app to apply different state management strategies. It is a simple CRUD app which has a collection of my good reads (books or blogs) and you could manage it meaning - add/edit/delete. Also if you notice there is counter which indicates the number of books/blogs that I have read. So what do you think would be the state of this app ?</p>
+<p>Lets take a sample app and try to decipher the state based on the above lines. Incidentally, we would be also using same app to apply different state management strategies. It is a simple CRUD app which has a collection of my good reads (books or blogs) and you could manage it meaning - add/edit/delete. Also if you notice there is counter which indicates the number of books/blogs that I have read. So thats about the app&rsquo;s functionality.</p>
 
 <p><img src="/img/my-good-reads-landing.png" alt="alt text" /></p>
+
+<p>Before we try to identify the state, lets look at how I have broken the page into components. Below is the home component. For brievity sake, I didn&rsquo;t split each good read into a component, but ideally that&rsquo;s how it should be done.</p>
+
+<p><img src="/img/home-component.png" alt="alt text" /></p>
+
+<p>Next is the navbar component. It&rsquo;s our header for all our pages and has a counter which tracks the book/blogs that I have read. It has to get incremented whenever I mark an item as read and decremented whenever I uncheck the checkbox.</p>
+
+<p><img src="/img/navbar-component.png" alt="alt text" /></p>
+
+<p>And finally we have the form component, which would be used to add new blog/book or edit an exiting item.</p>
+
+<p><img src="/img/form-component.png" alt="alt text" /></p>
 
 <p>To help us decipher the state of the app, lets try to understand the different kinds of state.</p>
 
 <h3 id="local-state">Local State</h3>
 
-<p>Local State refers to the set of data stored in your variables that pertains to just the component, meaning the set of data that are not exposed or shared by some other components.</p>
+<p>Local State refers to the set of data stored in your variables that pertains to just the component, meaning the set of data that are not exposed or shared by some other components. An example could the state in the form component when you are creating or editing a new item. You would be need to store the form data as local variables to do validation before saving it.</p>
 
-<h3 id="global-shared-state">Global/Shared State</h3>
+<h3 id="shared-state">Shared State</h3>
 
-<p>Global or shared state refers to the set of data that is being shared by more than 1 component meaning 1 or more component is directly or indirectly being dependent on the data.</p>
+<p>Shared state refers to the set of data that is being shared by more than 1 component meaning 1 or more component is directly or indirectly being dependent on the data.</p>
 
-<p>With respect to the our good-reads app, we could say the local state could the checkbox state in the individual cards to display a check mark or not. The shared state would be the list of good-reads as this is being shared by the list-container and also the header/navbar component which has the read counter.</p>
-
-<p><img src="/img/my-good-reads-with-state.png" alt="alt text" /></p>
+<p>So in our app, the shared state would be the list of items as this is being shared by the home component and also the navbar component which tracks the number of reads.</p>
 
 <h3 id="now-the-next-question-why-do-we-need-to-manage-state">Now the next question, why do we need to manage state ?</h3>
 
@@ -178,8 +188,7 @@ Programatically speaking, a state is nothing but the variables - objects, number
 
 <p>The above picture is a Venn diagram representation of apps where the circles represent components in the app. The intersection points represent the shared states amongst the components. As you could see, larger the app, more the components, more the intersections and more is the complexity of maintaining the state. Hence we need a state management solution !!!</p>
 
-<p>There you go, that brings to us the end of this post. I would be covering the different state management techniques along with their pros and cons in the next series of post.
-I have built the same good-reads app using the following state management techniques.. You could find the entire source code <a href="https://github.com/sundarcodes/my-good-reads-app">here</a></p>
+<p>There you go, that brings to us the end of this post. Hope you got a bit of understanding on state and what is the need to manage them. In the next set of posts, we will be seeing each one of the different technique in detail. The entire source code for this blog series is available in github. You could find it <a href="https://github.com/sundarcodes/my-good-reads-app">here</a>.</p>
 
 <ul>
 <li>Managing state using Angular services - Part 2</li>
