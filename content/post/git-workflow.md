@@ -7,13 +7,13 @@ draft: false
 
 In this post, I would be talking about the git workflow that could be adopted when you are working on a project all alone and also when you are working in a team. Before we start, lets try to understand what is Git and why it is becoming the leader in Version control/SCM (Software Configuration Management).
 
-#### What is Git ?
+### What is Git ?
 Git is a version control system with a de-centralized approach to source control. This means you don't really need a centralized server to work with instead you could have your own local version control system and push to a storage area whenever you feel like. Git was developed by Linus Torvalds, the same guy who wrote Linux Operating System. Git was developed out of frustration as Linus found the existing Source Control Systems were pathetic when it came to managing/collaborating across huge team of developers. If you like to know more, listen to [talk][git-talk] by Linus himself on git.
 
 #### Want to get your hands dirty on git ?
 If you are completely new to git, I would recommend you to just try out this 15 minute [git tutorial][git-tutorial] so that whatever I have written below would make sense.
 
-## Workflow when you working as a single man army
+### Workflow when you working as a single man army
 The first step would be creating a git repository with the default master branch in a hosting server ([github][github]/[gitlab][gitlab]/[bitbucket][bitbucket]). **Master** branch should always have the copy of the code which is going to go to production. Now create a **develop** branch, which at any point of time would be the working branch for all the new features you would be adding and this should be in sync with the master branch throughout.
 
 #### Working on a feature
@@ -23,7 +23,7 @@ Keep working on this branch till you have completed the development. Once you fe
 #### Working on a production defect
 Its very normal that we would need to send a patch to fix an urgent production issue. During this scenario, the workflow would be this. Sync up your local master and remote master branch. Create a branch from master with the name **hot-fix-A** and implement the hot fix. Once tested, submit a PR From the **hot-fix-A** branch to **master** branch. Review or have some one review it and merge the PR. Now, merge the master branch changes to the feature branch you are working on and continue working.
 
-## Workflow when you working in a team
+### Workflow when you working in a team
 When you are working in a team, the first step is to create a repo in a hosting server with the default master branch. Create another branch and name it as **develop**. Now ask your fellow developers to fork this repo. This is with respect to the initial setup. If you team has junior developers who are not experienced, this task of setting up a branch should be done by the senior dev or the team lead. The team lead should have all access to the master repo but the junior developers should just be able to colloborate by forking and submitting PRs.
 
 #### Working on a feature
@@ -33,7 +33,7 @@ Now lets say your junior devs are working on a feature, they have to create a br
 Now, you have deployed your code to production and out pops a high severity bug. The workflow for this is similar to the one that we had when you are working all alone in a project. You just create a branch from **master** called **hot-fix**, do the fix, test it. Submit a PR to merge it with develop. Deploy the **hot-fix** branch to production. Once its confirmed to be working fine, merge it with **master** and delete the **hot-fix** branch.
 
 
-## Summary
+### Summary
 This git workflow is based on my experience working both in solo projects and also working in a team enviornment. There are lot of blogs which gives you more variations of a git workflow [here][ref1], [here][ref2] and [here][ref3]. Read through all of them and choose whichever suits you best !!
 
 

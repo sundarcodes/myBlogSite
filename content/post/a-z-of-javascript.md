@@ -5,7 +5,7 @@ tags: ["JavaScript", "terminologies"]
 draft: false
 ---
 
-This is my collection of A-to-Z terms that one should knowing if they are into serious javascript programming.
+This is my collection of A-to-Z terms that one should know if they are into serious javascript programming.
 
 ### **A**sync/**Await**
 [Async][async] and [Await][await] are new features introduced in the language to make asynchronous code block look synchronous and more importantly make it more readable.

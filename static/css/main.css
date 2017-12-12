@@ -16,7 +16,7 @@ main {
     max-width: 750px;
 }
 
-main p {
+.justify {
     text-align: justify;
     text-indent: 30px;
 }
