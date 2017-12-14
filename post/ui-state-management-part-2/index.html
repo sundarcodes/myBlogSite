@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+         
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>State Management in Angular 2&#43; apps - Part 2</title>
+        <style>
+
+    html body {
+        font-family: 'Raleway', sans-serif;
+        background-color: white;
+    }
+
+    :root {
+        --accent: red;
+        --border-width:  5px ;
+    }
+
+</style>
+
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+
+
+ <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/solarized-dark.min.css"> 
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+ 
+
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+
+     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/go.min.js"></script>  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/haskell.min.js"></script>  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/kotlin.min.js"></script>  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/scala.min.js"></script>  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/swift.min.js"></script> 
+
+    <script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+<script>$(document).on('click', function() { $('.collapse').collapse('hide'); })</script>
+ <meta name="generator" content="Hugo 0.31.1" />
+        
+        
+        
+        
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-96880592-1"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments)};
+          gtag('js', new Date());
+
+          gtag('config', 'UA-96880592-1');
+        </script>
+        
+    </head>
+
+    <body>
+         
+        <nav class="navbar navbar-default navbar-fixed-top">
+
+            <div class="container">
+
+                <div class="navbar-header">
+
+                    <a class="navbar-brand visible-xs" href="#">State Management in Angular 2&#43; apps - Part 2</a>
+
+                    <button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+
+                </div>
+
+                <div class="collapse navbar-collapse">
+
+                    
+                        <ul class="nav navbar-nav">
+                            
+                                <li><a href="/">About Me</a></li>
+                            
+                                <li><a href="/post/">Posts</a></li>
+                            
+                        </ul>
+                    
+
+                    
+                        <ul class="nav navbar-nav navbar-right">
+                            
+                                <li class="navbar-icon"><a href="https://github.com/sundarcodes/"><i class="fa fa-github"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://twitter.com/sundar_says/"><i class="fa fa-twitter"></i></a></li>
+                            
+                        </ul>
+                    
+
+                </div>
+
+            </div>
+
+        </nav>
+
+
+<main>
+
+    <div class="item">
+
+    
+    
+    
+
+    
+    
+
+    <h4><a href="/post/ui-state-management-part-2/">State Management in Angular 2&#43; apps - Part 2</a></h4>
+    <h5>December 11, 2017</h5>
+     <kbd class="item-tag">State Management</kbd>  <kbd class="item-tag">Services</kbd>  <kbd class="item-tag">Change Detection</kbd>  <kbd class="item-tag">Angular 2&#43;</kbd> 
+
+</div>
+
+
+    <br> <div class="text-justify">
+
+<p>In <a href="/post/ui-state-management-part-1/">part-1</a> of this series, we got to know what state is and the need to have a state management solution especially in the case of a large web app. In this post, we will be seeing how we can solve our shared state problem using plain Angular services.</p>
+
+<p>In the last post we identified that the good reads collection is the data that is being shared by the home component and the navbar component. So we know that when we need to share data between components, we just need to introduce a service, place the data in the service and inject the service in components that needs it. This is the approach which we would have taken if we are working in AngularJS(Angular 1.x) also this is precisely what we will be doing here.</p>
+
+<pre><code class="language-javascript">@Injectable()
+export class BackendService {
+  baseAPIRURL = 'http://localhost:3000/api';
+  reads: GoodRead[];
+  subs: Subscription;
+  constructor(private http: HttpClient) {
+    this.reads = [];
+  }
+</code></pre>
+
+<p>We have a <code>BackendService</code> which is going to hold our collection in the reads variable. <code>GoodRead</code> is our model class which is going to have all attributes of blog/book like title, description, catergory etc.</p>
+
+<pre><code class="language-javascript">export class GoodRead {
+    constructor(public title: string, public description: string, public category: string,
+        public url: string, public isRead: boolean, public id?: number) {
+
+    }
+}
+</code></pre>
+
+<p>The service is going to talk with the backend and get the data and store it back in the <code>reads</code> variable.</p>
+
+<pre><code class="language-javascript"> fetchAllReads() {
+    const url = `${this.baseAPIRURL}/index`;
+    this.subs = this.http.get&lt;GoodRead[]&gt;(url)
+      .subscribe(data =&gt; this.reads = data);
+  }
+</code></pre>
+
+<p>And we would be exposing this <code>reads</code> array using a getter.</p>
+
+<pre><code class="language-javascript">get allReads(): GoodRead[] {
+    return this.reads;
+  }
+</code></pre>
+
+<p>Now in our home.component.ts, we would inject this service and in the home.component.html, we would be using this the service in our html to render the items in the DOM.</p>
+
+<pre><code>    &lt;div class=&quot;col-sm-4&quot;
+      *ngFor=&quot;let readItem of backendService.allReads&quot;&gt;
+      &lt;div class=&quot;card&quot;&gt;
+        &lt;div class=&quot;card-body&quot;&gt;
+</code></pre>
+
+<p>Now to display the number of items read, we expose a getter in the <code>BackendService</code>. I will come to the console.log statement in just a while.</p>
+
+<pre><code>  get allReadsCount(): number {
+    console.log(`Reading counter at ${Date.now()}`);
+    return this.reads.filter(read =&gt; read.isRead).length;
+  }
+</code></pre>
+
+<p>We would be using this method in the navbar component to display the number of reads.</p>
+
+<pre><code>  &lt;ul class=&quot;nav&quot;&gt;
+    &lt;li class=&quot;nav-item&quot;&gt;
+       Read
+      &lt;span class=&quot;badge badge-primary badge-pill&quot;&gt;{{backendService.allReadsCount}}&lt;/span&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+</code></pre>
+
+<p>Please look <a href="https://github.com/sundarcodes/my-good-reads-app/tree/master/frontend/angular/services-based-state-management/my-good-reads-app">here</a> for the complete code base.</p>
+
+<p>We have achieved what we wanted but is this the best solution. This offcourse is the simplest and more importantly it works!! But it has its own pitfalls. Lets see what are those.</p>
+
+<h4 id="pitfall-1-relying-on-angular-s-change-detection">Pitfall # 1 - Relying on Angular&rsquo;s Change Detection</h4>
+
+<p>Here, you have to understand how Angular magically updates the <strong>DOM</strong> whenever the <code>reads</code> variable in the <code>BackendService</code> gets updated. This happens through a change detection mechanism that gets triggered on every event that happens and Angular checks all the variables referenced in the HTML to see if its reference or value has changed. If there is a change, Angular rerenders the correspoding part of the DOM.</p>
+
+<p>The following line in the <code>navbar.component.html</code> is supposed to show the value of the total number of read items. I have added a console log inside the allReadCount getter, just to show the number of times the getter function is called.</p>
+
+<pre><code>&lt;span class=&quot;badge badge-primary badge-pill&quot;&gt;{{backendService.allReadsCount}}&lt;/span&gt;
+</code></pre>
+
+<p>You could observe from the below snapshot that for every event that happens in the UI, keypress, mouse scroll etc, Angular triggers the change detection mechanism to check any value has changed. This is a costly operation and for large scale apps with lot of component, this will cause performance issues. So this also help us understand how Angular does this magic of updating the DOM when we change anything in our state in the service.</p>
+
+<p><img src="/img/change-detection.png" alt="alt text" /></p>
+
+<p>The read counter gets called for every keypress that I do in the form which is not required.</p>
+
+<h4 id="pitfall-2-exposing-the-state-data">Pitfall # 2 - Exposing the state data</h4>
+
+<p>If you notice, although we have a getter method to fetch all the <code>reads</code> from the <code>BackendService</code>, we are exposing the entire array out to the public. Any component, service which has access to <code>BackendService</code> could potentially alter/update the array. Although we can make it private, we still need to have a getter which would return the reference to the array thereby exposing the array outside. This would make trouble shooting and would create a maintenance nightmare when you don&rsquo;t know which component is consuming and updating the array inadvertently when the app gets bigger.</p>
+
+<h4 id="summary">Summary</h4>
+
+<p>This approach of managing state through Angular Services turns out to be a <a href="https://en.wikipedia.org/wiki/Anti-pattern">anti-pattern</a>. Please do not use this technique. In the next post, we would be seeing a better approach using Observables. Catch you soon !!</p>
+</div>
+
+    
+    
+
+    
+
+        <h4 class="page-header">Related</h4>
+
+         <div class="item">
+
+    
+    
+    
+
+    
+    
+
+    <h4><a href="/post/ui-state-management-part-1/">State Management in Angular 2&#43; apps - Part 1</a></h4>
+    <h5>December 1, 2017</h5>
+     <kbd class="item-tag">State Management</kbd>  <kbd class="item-tag">RxJS</kbd>  <kbd class="item-tag">Mobx</kbd>  <kbd class="item-tag">Redux</kbd>  <kbd class="item-tag">ngRx</kbd>  <kbd class="item-tag">Angular 2&#43;</kbd> 
+
+</div>
+ 
+
+    
+
+    
+
+        <h4 class="page-header">Comments</h4>
+
+        <div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "sundarcodes" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    
+
+</main>
+
+        <footer>
+
+            <p class="copyright text-muted">&copy;2017</p>
+
+        </footer>
+       
+    </body>
+
+</html>
+

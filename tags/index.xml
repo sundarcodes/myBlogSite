@@ -32,7 +32,7 @@
     <item>
       <title>Angular 2&#43;</title>
       <link>/tags/angular-2&#43;/</link>
-      <pubDate>Fri, 01 Dec 2017 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 11 Dec 2017 00:00:00 +0000</pubDate>
       
       <guid>/tags/angular-2&#43;/</guid>
       <description></description>
@@ -53,6 +53,15 @@
       <pubDate>Sat, 08 Apr 2017 00:00:00 +0000</pubDate>
       
       <guid>/tags/best-practices/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Change Detection</title>
+      <link>/tags/change-detection/</link>
+      <pubDate>Mon, 11 Dec 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/change-detection/</guid>
       <description></description>
     </item>
     
@@ -120,9 +129,18 @@
     </item>
     
     <item>
+      <title>Services</title>
+      <link>/tags/services/</link>
+      <pubDate>Mon, 11 Dec 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/services/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>State Management</title>
       <link>/tags/state-management/</link>
-      <pubDate>Fri, 01 Dec 2017 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 11 Dec 2017 00:00:00 +0000</pubDate>
       
       <guid>/tags/state-management/</guid>
       <description></description>
