@@ -53,12 +53,11 @@ The above picture is a Venn diagram representation of apps where the circles rep
 
 There you go, that brings to us the end of this post. Hope you got a bit of understanding on state and what is the need to manage them. In the next set of posts, we will be seeing each one of the different technique in detail. The entire source code for this blog series is available in github. You could find it [here][github-repo].
 
-* Managing state using Angular services - Part 2
+* Managing state using Angular services - [Part 2][part-2]
 * Managing state using RxJS (Subjects n Observables) - Part 3
 * Managing state using Mobx via angular-mobx - Part 4
 * Managing state using Redux via ngRx - Part 5
 
-See you in the next post soon !!
 
 [ui-function-of-state]: http://beletsky.net/2016/04/the-functional-approach-to-ui.html
 [good-reads-landing]: /img/my-good-reads-landing.png
@@ -68,4 +67,6 @@ See you in the next post soon !!
 [good-reads-form-component]: /img/form-component.png
 [state-management-compexity]: /img/state-mgmt-complexity.png
 [github-repo]: https://github.com/sundarcodes/my-good-reads-app
+[part-2]: {{< ref "ui-state-management-part-2.md" >}}
+
 
