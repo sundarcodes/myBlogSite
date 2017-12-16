@@ -23,6 +23,7 @@ JavaScript is a [dynamically][dynamic-typing] typed language - an advantage as w
 
 ### **E**CMAScript/**E**ventLoop
 JavaScript's official name is [ECMAScript][ECMAScript].
+
 If you have to understand about [eventloop][event-loop], then you have to watch this [talk][philip-roberts].
 
 ### **F**unctional
@@ -78,6 +79,7 @@ JavaScript supports inheritance through [prototype chaining][prototype-chain].
 
 ### **W**eb Assembly/**W**eb Worker
 [Web Assembly][web-assembly] is mechanism or a provision by which browsers can execute assembly/compiled code. This opens up a whole lot of new things that could possible in a web app escpecially performance intrinsic ones like gaming, image processing etc all happening inside a browser.
+
 [Web Workers][web-worker] are means to achieve multi threading in browsers where we could do execute JS in parallel without affecting the main thread.
 
 ### **X**
@@ -110,6 +112,6 @@ Would love to hear your feedback and suggestions for the **To Be Added** letters
 [mdn]: https://developer.mozilla.org/bm/docs/Web/JavaScript
 [objects]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_Objects
 [prototype-chain]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Inheritance_and_the_prototype_chain
-[service-workers]:https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API
+[service-worker]:https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API
 [web-assembly]: https://developer.mozilla.org/en-US/docs/WebAssembly
 [web-worker]: https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers
