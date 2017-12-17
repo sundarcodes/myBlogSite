@@ -101,9 +101,10 @@ If you notice, although we have a getter method to fetch all the `reads` from th
 
 
 #### Summary
-This approach of managing state through Angular Services turns out to be a [anti-pattern][anti-pattern]. Please do not use this technique. In the next post, we would be seeing a better approach using Observables.
+This approach of managing state through Angular Services turns out to be a [anti-pattern][anti-pattern]. Please do not use this technique. In the next [post][part-3], we would be seeing a better approach using Observables.
 
 [part-1]: {{< ref "ui-state-management-part-1.md" >}}
+[part-3]: {{< ref "ui-state-management-part-3.md" >}}
 [service-mgmt-code-base]: https://github.com/sundarcodes/my-good-reads-app/tree/master/frontend/angular/services-based-state-management/my-good-reads-app
 [change-detection]: /img/change-detection.png
 [anti-pattern]: https://en.wikipedia.org/wiki/Anti-pattern
