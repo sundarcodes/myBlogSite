@@ -20,13 +20,27 @@ Lets take a sample app and try to decipher the state based on the above lines. I
 
 ![alt text][good-reads-landing]
 
-Before we try to identify the state, lets look at how I have broken the page into components. Below is the home component. For brievity sake, I didn't split each good read into a component, but ideally that's how it should be done.
+Before we try to identify the state, lets look at how I have broken the page into components. 
+
+#### Home Component
+Below is the home component.It hosts the list of reads. Basically its the container.  
 
 ![alt text][good-reads-home-component]
+
+#### Card Component
+Below is the one of the card component. These are presentational components which takes inputs and emits events as outputs whenever there is an event like marking the checkbox, deleting etc. 
+
+![alt text][read-card-component]
+
+These are also called as dumb components as they do not do anything apart from I/O and its responsibility of the parent component containing or hosting these dumb components to handle events and react to them. So the home component hosting these components is called a Smart component as it knows and decides what to do on getting an event. Dumb component promotes reusability as they could be fitted in any other component or page with a similar requirement.
+
+#### Navbar Component
 
 Next is the navbar component. It's our header for all our pages and has a counter which tracks the book/blogs that I have read. It has to get incremented whenever I mark an item as read and decremented whenever I uncheck the checkbox.
 
 ![alt text][good-reads-navbar-component]
+
+#### Form Component
 
 And finally we have the form component, which would be used to add new blog/book or edit an exiting item.
 
@@ -65,6 +79,7 @@ There you go, that brings to us the end of this post. Hope you got a bit of unde
 [good-reads-home-component]: /img/home-component.png
 [good-reads-navbar-component]: /img/navbar-component.png
 [good-reads-form-component]: /img/form-component.png
+[read-card-component]: /img/read-card-component.png
 [state-management-compexity]: /img/state-mgmt-complexity.png
 [github-repo]: https://github.com/sundarcodes/my-good-reads-app
 [part-2]: {{< ref "ui-state-management-part-2.md" >}}

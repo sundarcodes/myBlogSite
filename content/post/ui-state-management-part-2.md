@@ -97,11 +97,11 @@ You could observe from the below snapshot that for every event that happens in t
 The read counter gets called for every keypress that I do in the form which is not required.
 
 #### Pitfall # 2 - Exposing the state data
-If you notice, although we have a getter method to fetch all the `reads` from the `BackendService`, we are exposing the entire array out to the public. Any component, service which has access to `BackendService` could potentially alter/update the array. Although we can make it private, we still need to have a getter which would return the reference to the array thereby exposing the array outside. This would make trouble shooting and would create a maintenance nightmare when you don't know which component is consuming and updating the array inadvertently when the app gets bigger.
+If you notice, although we have a getter method to fetch all the `reads` from the `BackendService`, we are exposing the entire array out to the public. Any component, service which has access to `BackendService` could potentially alter/update the array. Although we can make it private, we still need to have a getter which would return the reference to the array thereby exposing the array outside and breaking the encapsulation. This would make trouble shooting and would create a maintenance nightmare when you don't know which component is consuming and updating the array inadvertently when the app gets bigger.
 
 
 #### Summary
-This approach of managing state through Angular Services turns out to be a [anti-pattern][anti-pattern]. Please do not use this technique. In the next post, we would be seeing a better approach using Observables. Catch you soon !!
+This approach of managing state through Angular Services turns out to be a [anti-pattern][anti-pattern]. Please do not use this technique. In the next post, we would be seeing a better approach using Observables.
 
 [part-1]: {{< ref "ui-state-management-part-1.md" >}}
 [service-mgmt-code-base]: https://github.com/sundarcodes/my-good-reads-app/tree/master/frontend/angular/services-based-state-management/my-good-reads-app
