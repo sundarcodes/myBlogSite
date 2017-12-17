@@ -156,13 +156,29 @@ Programatically speaking, a state is nothing but the variables - objects, number
 
 <p><img src="/img/my-good-reads-landing.png" alt="alt text" /></p>
 
-<p>Before we try to identify the state, lets look at how I have broken the page into components. Below is the home component. For brievity sake, I didn&rsquo;t split each good read into a component, but ideally that&rsquo;s how it should be done.</p>
+<p>Before we try to identify the state, lets look at how I have broken the page into components.</p>
+
+<h4 id="home-component">Home Component</h4>
+
+<p>Below is the home component.It hosts the list of reads. Basically its the container.</p>
 
 <p><img src="/img/home-component.png" alt="alt text" /></p>
+
+<h4 id="card-component">Card Component</h4>
+
+<p>Below is the one of the card component. These are presentational components which takes inputs and emits events as outputs whenever there is an event like marking the checkbox, deleting etc.</p>
+
+<p><img src="/img/read-card-component.png" alt="alt text" /></p>
+
+<p>These are also called as dumb components as they do not do anything apart from I/O and its responsibility of the parent component containing or hosting these dumb components to handle events and react to them. So the home component hosting these components is called a Smart component as it knows and decides what to do on getting an event. Dumb component promotes reusability as they could be fitted in any other component or page with a similar requirement.</p>
+
+<h4 id="navbar-component">Navbar Component</h4>
 
 <p>Next is the navbar component. It&rsquo;s our header for all our pages and has a counter which tracks the book/blogs that I have read. It has to get incremented whenever I mark an item as read and decremented whenever I uncheck the checkbox.</p>
 
 <p><img src="/img/navbar-component.png" alt="alt text" /></p>
+
+<h4 id="form-component">Form Component</h4>
 
 <p>And finally we have the form component, which would be used to add new blog/book or edit an exiting item.</p>
 
@@ -206,6 +222,20 @@ Programatically speaking, a state is nothing but the variables - objects, number
         <h4 class="page-header">Related</h4>
 
          <div class="item">
+
+    
+    
+    
+
+    
+    
+
+    <h4><a href="/post/ui-state-management-part-3/">State Management in Angular 2&#43; apps - Part 3</a></h4>
+    <h5>December 15, 2017</h5>
+     <kbd class="item-tag">State Management</kbd>  <kbd class="item-tag">RxJS</kbd>  <kbd class="item-tag">Observables</kbd>  <kbd class="item-tag">Change Detection Strategy</kbd>  <kbd class="item-tag">Angular 2&#43;</kbd> 
+
+</div>
+  <div class="item">
 
     
     
