@@ -110,7 +110,6 @@ These are some of things that we should be extra cautious when dealing with OnPu
 
 With that we come to end of this part. Hope you got an essence of how RxJS Subjects and Observables work, how Angular Change Detection works and also how using immutable collection would help us in building more predictive apps. The source code of the app implementing this strategy could be found [here][observables-mgmt-code-base].
 
-C u soon with the next post on Mobx !!!
 
 [part-1]: {{< ref "ui-state-management-part-1.md" >}}
 [part-2]: {{< ref "ui-state-management-part-2.md" >}}

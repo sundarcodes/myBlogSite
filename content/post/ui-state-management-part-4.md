@@ -1,8 +1,8 @@
 ---
 title: "State Management in Angular 2+ apps - Part 4"
-date: 2017-12-19
+date: 2018-01-04
 tags: ["State Management", "Mobx", "Change Detection Strategy", "Angular 2+"]
-draft: true
+draft: false
 ---
 
 In [part-1][part-1] of this series, we got to know what state is and the need to have a state management solution especially in the case of a large web app. In this post, we will be seeing how we can solve our shared state problem using a solution called Mobx. 
@@ -15,7 +15,7 @@ Before we see how to implement mobx in our good reads app, lets try to understan
 Store is simply a object thats going to hold our state. So in our app, this would just hold the list of books/blogs.
 
 #### Actions
-Actions refer to the any event could change the state of our app. In the context our app, these would be adding a new read,deleting a read or marking a book/blog as read.
+Actions refer to any event that could change the state of our app. In the context our app, actions could be adding a new read,deleting a read or marking a book/blog as read.
 
 #### Derivations
 Derivations are values that could be computed or derived from a state. In our app, the total read counter could be derived from the reads collection instead of storing it as a separate entity in the state.
@@ -29,7 +29,7 @@ Mobx is built on the following principle
 
 To implement this, it makes heavy use of observables and to make it easy for the developers, it has done lot of heavy lifting. To understand and read more on this, please refer to this [blog][mobx-post] from the creator of Mobx, [Michel Westrate][michel-westrate-twitter].
 
-Okay. Its time now to see Mobx in action. Lets get started. We would using a package called [mobx-angular][mobx-angular] which is an angular wrapper on the mobx. 
+Okay. Its time now to see Mobx in action.We would be using a package called [mobx-angular][mobx-angular] which is an angular wrapper on the mobx. 
 
 The first thing we are going to do is to create the store. Our store is going to hold the reads collection. `actionStatus` will be used to store the status of a network request.
 ````
@@ -73,7 +73,7 @@ Now, it time to see how to implement a derivation. Here in our app, it would be 
 ````
 We just use the `@computed` decorator to make the `readsCounter` a derivation.
 
-Also if you have noticed, the code that interacts with the service would just simply do one job of interacting with the Backend APIs, thus adhering to the Single Responsibility Principle. 
+Also if you have noticed, the code that interacts with the service would just simply do one job of interacting with the backend APIs, thus adhering to the Single Responsibility Principle. 
 
 ````
   addNewRead(read: GoodRead) {
@@ -113,6 +113,17 @@ Now, lets see what are the changes in `home.component.html`.
 
 We now are directly reading the store `reads` collection. Note that there is no `| async`, instead we are using `*mobxAutorun` directive which automatically takes care of rerendering the list if there are any changes to state. This is the magic that Mobx does out of the box for us. 
 
+We can also mark the home component's change detection strategy to OnPush as Mobx would ensure that it would trigger the change detection whenever it sees there is a change in a state that the component would be interested in. This alleviates the developers from the responsbility of making apps more performant.
+
+````
+Component({
+  selector: 'app-home',
+  templateUrl: './home.component.html',
+  styleUrls: ['./home.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush
+})
+````
+
 That's all we need to do for Mobx implementation. The code is lot more concise, concerns separated and easy to code with lot of magic happening under the hood through Mobx. 
 
 To summarize, we did the following:
@@ -120,7 +131,14 @@ To summarize, we did the following:
 * Created a store to hold our state
 * Created actions which updates the state
 * Created derivations
-*  
+* Called the actions methods through the store from the Components
+* Added the mobxAutorun directive to the component view (html) to automatically detect changes and rerender the DOM
+
+You could find the complete source code for the Mobx implementation [here][mobx-github].
+
+Mobx implmentation has so far being the most easy and consise. With lot less code, we get lot of value. But sometimes this could also backfire, if you do not understand how it all works under the hood. So please make it a point to read more about how Mobx works in this [post][mobx-post].
+
+See you soon in the next post on Redux !! Till then Happy learning.
 
 [part-1]: {{< ref "ui-state-management-part-1.md" >}}
 [part-2]: {{< ref "ui-state-management-part-2.md" >}}
@@ -129,3 +147,4 @@ To summarize, we did the following:
 [mobx-post]: https://medium.com/@mweststrate/becoming-fully-reactive-an-in-depth-explanation-of-mobservable-55995262a254
 [michel-westrate-twitter]: https://twitter.com/mweststrate
 [mobx-angular]: https://github.com/mobxjs/mobx-angular
+[mobx-github]: https://github.com/sundarcodes/my-good-reads-app/tree/master/frontend/angular/mobx-based-state-management/my-good-reads-app
