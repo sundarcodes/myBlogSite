@@ -69,7 +69,7 @@ There you go, that brings to us the end of this post. Hope you got a bit of unde
 
 * Managing state using Angular services - [Part 2][part-2]
 * Managing state using RxJS (Subjects n Observables) - [Part 3][part-3]
-* Managing state using Mobx via angular-mobx - Part 4
+* Managing state using Mobx via angular-mobx - [Part 4][part-4]
 * Managing state using Redux via ngRx - Part 5
 
 
@@ -84,6 +84,7 @@ There you go, that brings to us the end of this post. Hope you got a bit of unde
 [github-repo]: https://github.com/sundarcodes/my-good-reads-app
 [part-2]: {{< ref "ui-state-management-part-2.md" >}}
 [part-3]: {{< ref "ui-state-management-part-3.md" >}}
+[part-4]: {{< ref "ui-state-management-part-4.md" >}}
 
 
 
