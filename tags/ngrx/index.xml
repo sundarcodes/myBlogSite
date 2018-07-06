@@ -6,10 +6,20 @@
     <description>Recent content in Ngrx on sundarcodes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 01 Dec 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 28 Jan 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/ngrx/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>State Management in Angular 2&#43; apps - Part 5</title>
+      <link>/post/ui-state-management-part-5/</link>
+      <pubDate>Sun, 28 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/ui-state-management-part-5/</guid>
+      <description>In this post of our series in state management, we will be seeing how we can solve our state problem using a solution called Redux. We will be use the angular variant of Redux called ngRx.
+Redux has been inspired by elm and Flux. Elm is a pure functional programming language used for developing the front end of modern day web apps. Flux is a stage management solution. If this is first time you are hearing about Redux, please do watch these videos from the co-creator of Redux, Dan Abramov.</description>
+    </item>
     
     <item>
       <title>State Management in Angular 2&#43; apps - Part 1</title>
