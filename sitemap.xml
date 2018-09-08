@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>/post/angular-vs-react---my-take-on-it/</loc>
+    <lastmod>2018-09-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/post/ui-state-management-part-6/</loc>
     <lastmod>2018-03-01T00:00:00+00:00</lastmod>
   </url>
@@ -60,7 +65,7 @@
   
   <url>
     <loc>/tags/angular/</loc>
-    <lastmod>2017-03-25T00:00:00+00:00</lastmod>
+    <lastmod>2018-09-01T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -137,7 +142,13 @@
   
   <url>
     <loc>/post/</loc>
-    <lastmod>2018-03-01T00:00:00+00:00</lastmod>
+    <lastmod>2018-09-01T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/react/</loc>
+    <lastmod>2018-09-01T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -197,7 +208,7 @@
   
   <url>
     <loc>/</loc>
-    <lastmod>2018-03-01T00:00:00+00:00</lastmod>
+    <lastmod>2018-09-01T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   

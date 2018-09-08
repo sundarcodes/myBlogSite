@@ -23,7 +23,7 @@
     <item>
       <title>Angular</title>
       <link>/tags/angular/</link>
-      <pubDate>Sat, 25 Mar 2017 00:00:00 +0000</pubDate>
+      <pubDate>Sat, 01 Sep 2018 00:00:00 +0000</pubDate>
       
       <guid>/tags/angular/</guid>
       <description></description>
@@ -125,6 +125,15 @@
       <pubDate>Fri, 15 Dec 2017 00:00:00 +0000</pubDate>
       
       <guid>/tags/observables/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>React</title>
+      <link>/tags/react/</link>
+      <pubDate>Sat, 01 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/react/</guid>
       <description></description>
     </item>
     
