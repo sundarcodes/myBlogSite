@@ -4,7 +4,7 @@
          
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Ngrx</title>
+        <title>State Management in Angular 2&#43; apps - Part 6 - Conclusion</title>
         <style>
 
     html body {
@@ -60,9 +60,6 @@
 <script>$(document).on('click', function() { $('.collapse').collapse('hide'); })</script>
  <meta name="generator" content="Hugo 0.31.1" />
         
-        <link href="/tags/ngrx/index.xml" rel="alternate" type="application/rss+xml" title="sundarcodes" />
-        <link href="/tags/ngrx/index.xml" rel="feed" type="application/rss+xml" title="sundarcodes" />
-        
         
         
         
@@ -85,7 +82,7 @@
 
                 <div class="navbar-header">
 
-                    <a class="navbar-brand visible-xs" href="#">Ngrx</a>
+                    <a class="navbar-brand visible-xs" href="#">State Management in Angular 2&#43; apps - Part 6 - Conclusion</a>
 
                     <button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse">
                         <span class="icon-bar"></span>
@@ -126,9 +123,7 @@
 
 <main>
 
-    <h2>Ngrx</h2>
-
-     <div class="item">
+    <div class="item">
 
     
     
@@ -142,7 +137,59 @@
      <kbd class="item-tag">State Management</kbd>  <kbd class="item-tag">Redux</kbd>  <kbd class="item-tag">ngRx</kbd>  <kbd class="item-tag">Angular 2&#43;</kbd>  <kbd class="item-tag">what to choose</kbd> 
 
 </div>
-  <div class="item">
+
+
+    <br> <div class="text-justify">
+
+<p>Over the last 5 posts in this series, we have seen various ways of managing state in a Angular application. In this post, we would conclude by giving some pointers on which technique to choose based on the use cases.</p>
+
+<h3 id="when-to-go-for-a-service-based-approach">When to go for a Service based approach ?</h3>
+
+<p>This is most easiest and the simplest approach to share/manage data across components/pages in your App. But this could quickly go haywire if not used in the right way and with proper encapsulation techniques.</p>
+
+<pre><code>  * Use for a very small app (having 3 to 5 pages)
+  * Take into consideration the automatic change detection strategy that Angular employs and the cost of it in your App
+</code></pre>
+
+<h3 id="when-to-go-for-an-observables-based-approach">When to go for an Observables based approach ?</h3>
+
+<p>This approach is good if you first have a thorough understanding of how observables work and if you are going to build a small app which has lot of moving parts and state getting shared all over. Also if you are handling server push events through web sockets, hooking on to an observable and updating the DOM whenever you get data from the server, then observables would be a good choice.</p>
+
+<pre><code>* Use RxJS Observables when you first have a solid understanding on how Observables work
+* Use for a very small to medium app (having 5 to 10 pages)
+* Use OnPush Change Detection Strategy to optmize performance
+</code></pre>
+
+<h3 id="when-to-go-for-a-mobx-based-approach">When to go for a Mobx based approach ?</h3>
+
+<p>Mobx is a great solution for state management that does lot of magic out of the box. With less code, you get more things done.</p>
+
+<pre><code>* Use Mobx when you have a small team of developers working on a large app with each of them understanding how Mobx works and all working on agreed coding guidelines.
+* Mobx is more of a syntactic sugar for Observables based approach with Mobx library doing lot of heavy lifting.
+* Use Mobx when you want to quickly get started with a state management solution
+* Use OnPush Change Detection Strategy to optmize performance
+</code></pre>
+
+<h3 id="when-to-go-for-a-redux-based-approach">When to go for a Redux based approach ?</h3>
+
+<pre><code>* Use Redux when you are going to develop a large scale app with a big team of developers.
+* Use Redux when you do not mind writing more code to wire up things and
+* Use OnPush Change Detection Strategy to optmize performance
+</code></pre>
+
+<p>I personally prefer Redux as it gives you the feel that you are managing state the right way and I am personally a big fan of the redux dev tools.</p>
+
+<p>Thanks for reading this far !!!</p>
+</div>
+
+    
+    
+
+    
+
+        <h4 class="page-header">Related</h4>
+
+         <div class="item">
 
     
     
@@ -165,16 +212,57 @@
     
     
 
-    <h4><a href="/post/ui-state-management-part-1/">State Management in Angular 2&#43; apps - Part 1</a></h4>
-    <h5>December 1, 2017</h5>
-     <kbd class="item-tag">State Management</kbd>  <kbd class="item-tag">RxJS</kbd>  <kbd class="item-tag">Mobx</kbd>  <kbd class="item-tag">Redux</kbd>  <kbd class="item-tag">ngRx</kbd>  <kbd class="item-tag">Angular 2&#43;</kbd> 
+    <h4><a href="/post/ui-state-management-part-4/">State Management in Angular 2&#43; apps - Part 4</a></h4>
+    <h5>January 4, 2018</h5>
+     <kbd class="item-tag">State Management</kbd>  <kbd class="item-tag">Mobx</kbd>  <kbd class="item-tag">Change Detection Strategy</kbd>  <kbd class="item-tag">Angular 2&#43;</kbd> 
+
+</div>
+  <div class="item">
+
+    
+    
+    
+
+    
+    
+
+    <h4><a href="/post/ui-state-management-part-3/">State Management in Angular 2&#43; apps - Part 3</a></h4>
+    <h5>December 15, 2017</h5>
+     <kbd class="item-tag">State Management</kbd>  <kbd class="item-tag">RxJS</kbd>  <kbd class="item-tag">Observables</kbd>  <kbd class="item-tag">Change Detection Strategy</kbd>  <kbd class="item-tag">Angular 2&#43;</kbd> 
 
 </div>
  
 
+    
+
+    
+
+        <h4 class="page-header">Comments</h4>
+
+        <div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "sundarcodes" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    
+
 </main>
-
-
 
         <footer>
 
