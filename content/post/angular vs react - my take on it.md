@@ -1,7 +1,7 @@
 ---
 title: 'Angular vs React'
 date: 2018-09-01
-tags: ['Angular', 'React', 'what to choose']
+tags: ['Angular', 'React']
 draft: false
 ---
 
