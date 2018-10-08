@@ -75,6 +75,15 @@
     </item>
     
     <item>
+      <title>Editor</title>
+      <link>/tags/editor/</link>
+      <pubDate>Thu, 20 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/editor/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Front End Basics</title>
       <link>/tags/front-end-basics/</link>
       <pubDate>Tue, 01 Aug 2017 00:00:00 +0000</pubDate>
@@ -102,6 +111,15 @@
     </item>
     
     <item>
+      <title>Lint</title>
+      <link>/tags/lint/</link>
+      <pubDate>Thu, 20 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/lint/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Mobx</title>
       <link>/tags/mobx/</link>
       <pubDate>Thu, 04 Jan 2018 00:00:00 +0000</pubDate>
@@ -125,6 +143,15 @@
       <pubDate>Fri, 15 Dec 2017 00:00:00 +0000</pubDate>
       
       <guid>/tags/observables/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Productivity</title>
+      <link>/tags/productivity/</link>
+      <pubDate>Thu, 20 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/productivity/</guid>
       <description></description>
     </item>
     
@@ -183,6 +210,15 @@
     </item>
     
     <item>
+      <title>Tools</title>
+      <link>/tags/tools/</link>
+      <pubDate>Thu, 20 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/tools/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Version Control</title>
       <link>/tags/version-control/</link>
       <pubDate>Sat, 08 Apr 2017 00:00:00 +0000</pubDate>
@@ -194,7 +230,7 @@
     <item>
       <title>Web Development</title>
       <link>/tags/web-development/</link>
-      <pubDate>Tue, 01 Aug 2017 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 20 Sep 2018 00:00:00 +0000</pubDate>
       
       <guid>/tags/web-development/</guid>
       <description></description>
