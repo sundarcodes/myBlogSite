@@ -1,7 +1,7 @@
 ---
-title: "Front End development Analogy"
+title: 'Front End development Analogy'
 date: 2017-08-01
-tags: ["web-development", "analogy", "front-end-basics"]
+tags: ['web-development', 'analogy', 'front-end-basics']
 draft: false
 ---
 
@@ -25,9 +25,12 @@ I am going to compare building a website to building a house where :
 
 **UI/UX Designer** in the context of house construction could be thought of interior/exterior decorators whose primary responsibility is to facelift the look and feel of the house and make staying a pleasure for the resident. In the web development context, a UI/UX designed would typically design the layout of the web page, choose the fonts to be used, the coloring etc according to the end-user/business needs.
 
-**UI Developers** would be the persons actually doing the house construction work - masons, painters. They would start from the foundations laying brick by brick and building the house group up following the architecture plan proposed by the Architect. Similarly, a UI developer would build a webpage following the layout and specifications laid out by the UI designer. A UI developer should be strong in HTML,CSS.
+**UI Developers** would be the persons actually doing the house construction work - masons, painters. They would start from the foundations laying brick by brick and building the house group up following the architecture plan proposed by the interior designer. Similarly, a UI developer would build a webpage following the layout and specifications laid out by the UI designer. A UI developer should be strong in HTML,CSS.
 
 **UI Engineers** would be the persons who would be involved in the engineering works inside the house. These could be your electricians, plumbers, carpenters. Similarly, UI Engineers would be developers who apart from having a basic knowledge in HTML, CSS should have an strong knowledge on JavaScript and also preferably knowledge on any modern front end framework.
 
+Continuing in the same lines
 
-## To Be Extended .... :) 
+**Design**
+
+**Architecture**

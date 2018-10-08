@@ -77,7 +77,7 @@ Again, I do not have anything to pick here. The new change detection algorithm i
 
 ## Element # 9 - Programming Paradigm
 
-React in general tries to bring in few functional programming aspects when building the UI - Immutable states, pure functions (through reducers in Redux). Angular favours a little object oriented style of programming through - classes, services. But the developer could mix and match the programming style that he/she likes and feels appropriate to the project needs.
+React in general tries to bring in few functional programming aspects when building the UI - Immutable states, pure functions (through render function & reducers in Redux). Angular favours a little object oriented style of programming through - classes, services. But the developer could mix and match the programming style that he/she likes and feels appropriate to the project needs.
 
 #### **_Verdict_**
 
@@ -95,7 +95,7 @@ Both have their learning curves. Though I felt Jest+enzyme was easier to learn, 
 
 The final scoreline gives you an indication on how Angular and React share lot in common. Again all these are based out of my little experience on working on these 2 lovely framework/library. I liked learning and working on both of them. Thanks to both the Angular and React developers community for helping us build awesome apps and helping the Web move forward.
 
-P.S: I am yet to get my hands dirty on Vue. As soon as I get an oppourtunity to work on Vue, I would update my experience with Vue too. :)
+P.S: I am yet to get my hands dirty on Vue. As soon as I get an opportunity to work on Vue, I would update my experience with Vue too. :)
 Till then happy coding and learning !!
 
 <!-- <table>
