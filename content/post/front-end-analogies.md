@@ -28,9 +28,3 @@ I am going to compare building a website to building a house where :
 **UI Developers** would be the persons actually doing the house construction work - masons, painters. They would start from the foundations laying brick by brick and building the house group up following the architecture plan proposed by the interior designer. Similarly, a UI developer would build a webpage following the layout and specifications laid out by the UI designer. A UI developer should be strong in HTML,CSS.
 
 **UI Engineers** would be the persons who would be involved in the engineering works inside the house. These could be your electricians, plumbers, carpenters. Similarly, UI Engineers would be developers who apart from having a basic knowledge in HTML, CSS should have an strong knowledge on JavaScript and also preferably knowledge on any modern front end framework.
-
-Continuing in the same lines
-
-**Design**
-
-**Architecture**
