@@ -129,6 +129,15 @@
     </item>
     
     <item>
+      <title>Mysql</title>
+      <link>/tags/mysql/</link>
+      <pubDate>Thu, 11 Oct 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/mysql/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Ngrx</title>
       <link>/tags/ngrx/</link>
       <pubDate>Thu, 01 Mar 2018 00:00:00 +0000</pubDate>
@@ -143,6 +152,15 @@
       <pubDate>Fri, 15 Dec 2017 00:00:00 +0000</pubDate>
       
       <guid>/tags/observables/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Postgres</title>
+      <link>/tags/postgres/</link>
+      <pubDate>Thu, 11 Oct 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/postgres/</guid>
       <description></description>
     </item>
     
@@ -188,6 +206,15 @@
       <pubDate>Mon, 11 Dec 2017 00:00:00 +0000</pubDate>
       
       <guid>/tags/services/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Sql Query Tuning</title>
+      <link>/tags/sql-query-tuning/</link>
+      <pubDate>Thu, 11 Oct 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/sql-query-tuning/</guid>
       <description></description>
     </item>
     
