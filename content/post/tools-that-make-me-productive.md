@@ -15,7 +15,7 @@ You have got to master the keyboard shortcut keys to make full leverage of any e
 
 ### Docker
 
-Absolutely love docker just for the simplicity it offers to setting up an complex environments all in my local box. I could not put everything here.. so dedicating a separate [post][docker-post] for it.. Docker rocks !!
+Absolutely love docker just for the simplicity it offers to setting up an complex environments all in my local box. I could not put everything here.. so working on a dedicated post for it.. Docker rocks !!
 
 ### transfer.sh
 
@@ -35,9 +35,6 @@ Nowadays, if I am working on a NodeJS or on building a web app, TypeScript is wh
 
 [vs-code-mac-cheat-sheet]: https://code.visualstudio.com/shortcuts/keyboard-shortcuts-macos.pdf
 [vs-code-windows-cheat-sheet]: https://code.visualstudio.com/shortcuts/keyboard-shortcuts-windows.pdf
-
-[docker-post]: {{< ref "how-docker-helped-in-my-projects.md" >}}
-
 [transfer.sh]: https://transfer.sh/
 [dutch-coders]: http://dutchcoders.io/
 [iterm]: https://www.iterm2.com/
