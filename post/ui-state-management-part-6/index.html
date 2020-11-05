@@ -58,7 +58,7 @@
 
 
 <script>$(document).on('click', function() { $('.collapse').collapse('hide'); })</script>
- <meta name="generator" content="Hugo 0.31.1" />
+ <meta name="generator" content="Hugo 0.76.5" />
         
         
         
@@ -139,50 +139,35 @@
 </div>
 
 
-    <br> <div class="text-justify">
-
-<p>Over the last 5 posts in this series, we have seen various ways of managing state in a Angular application. In this post, we would conclude by giving some pointers on which technique to choose based on the use cases.</p>
-
-<h3 id="when-to-go-for-a-service-based-approach">When to go for a Service based approach ?</h3>
-
+    <br> <div class="text-justify"><p>Over the last 5 posts in this series, we have seen various ways of managing state in a Angular application. In this post, we would conclude by giving some pointers on which technique to choose based on the use cases.</p>
+<h3 id="when-to-go-for-a-service-based-approach-">When to go for a Service based approach ?</h3>
 <p>This is most easiest and the simplest approach to share/manage data across components/pages in your App. But this could quickly go haywire if not used in the right way and with proper encapsulation techniques.</p>
-
 <ul>
 <li>Use for a very small app (having 3 to 5 pages)</li>
 <li>Take into consideration the automatic change detection strategy that Angular employs and the cost of it in your App</li>
 </ul>
-
-<h3 id="when-to-go-for-an-observables-based-approach">When to go for an Observables based approach ?</h3>
-
+<h3 id="when-to-go-for-an-observables-based-approach-">When to go for an Observables based approach ?</h3>
 <p>This approach is good if you first have a thorough understanding of how observables work and if you are going to build a small app which has lot of moving parts and state getting shared all over. Also if you are handling server push events through web sockets, hooking on to an observable and updating the DOM whenever you get data from the server, then observables would be a good choice.</p>
-
 <ul>
 <li>Use RxJS Observables when you first have a solid understanding on how Observables work</li>
 <li>Use for a very small to medium app (having 5 to 10 pages)</li>
 <li>Use OnPush Change Detection Strategy to optmize performance</li>
 </ul>
-
-<h3 id="when-to-go-for-a-mobx-based-approach">When to go for a Mobx based approach ?</h3>
-
+<h3 id="when-to-go-for-a-mobx-based-approach-">When to go for a Mobx based approach ?</h3>
 <p>Mobx is a great solution for state management that does lot of magic out of the box. With less code, you get more things done.</p>
-
 <ul>
 <li>Use Mobx when you have a small team of developers working on a large app with each of them understanding how Mobx works and all working on agreed coding guidelines.</li>
 <li>Mobx is more of a syntactic sugar for Observables based approach with Mobx library doing lot of heavy lifting.</li>
 <li>Use Mobx when you want to quickly get started with a state management solution</li>
 <li>Use OnPush Change Detection Strategy to optmize performance</li>
 </ul>
-
-<h3 id="when-to-go-for-a-redux-based-approach">When to go for a Redux based approach ?</h3>
-
+<h3 id="when-to-go-for-a-redux-based-approach-">When to go for a Redux based approach ?</h3>
 <ul>
 <li>Use Redux when you are going to develop a large scale app with a big team of developers.</li>
 <li>Use Redux when you do not mind writing more code to wire up things and</li>
 <li>Use OnPush Change Detection Strategy to optmize performance</li>
 </ul>
-
 <p>I personally prefer Redux as it gives you the feel that you are managing state the right way and I am personally a big fan of the redux dev tools.</p>
-
 <p>Thanks for reading this far !!!</p>
 </div>
 
@@ -244,7 +229,7 @@
         <h4 class="page-header">Comments</h4>
 
         <div id="disqus_thread"></div>
-<script>
+<script type="application/javascript">
     var disqus_config = function () {
     
     
@@ -270,7 +255,7 @@
 
         <footer>
 
-            <p class="copyright text-muted">&copy;2019</p>
+            <p class="copyright text-muted">&copy;2020</p>
 
         </footer>
        

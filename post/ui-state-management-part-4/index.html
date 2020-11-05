@@ -58,7 +58,7 @@
 
 
 <script>$(document).on('click', function() { $('.collapse').collapse('hide'); })</script>
- <meta name="generator" content="Hugo 0.31.1" />
+ <meta name="generator" content="Hugo 0.76.5" />
         
         
         
@@ -139,52 +139,31 @@
 </div>
 
 
-    <br> <div class="text-justify">
-
-<p>In <a href="/post/ui-state-management-part-1/">part-1</a> of this series, we got to know what state is and the need to have a state management solution especially in the case of a large web app. In this post, we will be seeing how we can solve our shared state problem using a solution called Mobx.</p>
-
+    <br> <div class="text-justify"><p>In <a href="/post/ui-state-management-part-1/">part-1</a> of this series, we got to know what state is and the need to have a state management solution especially in the case of a large web app. In this post, we will be seeing how we can solve our shared state problem using a solution called Mobx.</p>
 <p>Mobx is a non-opionated state management technique which again uses concepts of observable that we had seen in <a href="/post/ui-state-management-part-3/">part-3</a>. You could say mobx is a wrapper built on top of observables and does lot of magic under the hood. I won&rsquo;t go in depth on how and what of mobx. There are lots of good tutorials, blogs on this. You could check out the official documention of mobx <a href="https://mobx.js.org/getting-started.html">here</a>.</p>
-
 <p>Before we see how to implement mobx in our good reads app, lets try to understand few terms which are the building blocks of mobx and correlate them to our app.</p>
-
 <h4 id="store">Store</h4>
-
 <p>Store is simply a object thats going to hold our state. So in our app, this would just hold the list of books/blogs.</p>
-
 <h4 id="actions">Actions</h4>
-
 <p>Actions refer to any event that could change the state of our app. In the context our app, actions could be adding a new read,deleting a read or marking a book/blog as read.</p>
-
 <h4 id="derivations">Derivations</h4>
-
 <p>Derivations are values that could be computed or derived from a state. In our app, the total read counter could be derived from the reads collection instead of storing it as a separate entity in the state.</p>
-
 <h4 id="reactions">Reactions</h4>
-
 <p>Reactions are there to handle your side effects like doing a network call, DOM updates.</p>
-
 <p>Mobx is built on the following principle</p>
-
 <blockquote>
 <p>Reacting to state changes rather than acting on state changes</p>
 </blockquote>
-
 <p>To implement this, it makes heavy use of observables and to make it easy for the developers, it has done lot of heavy lifting. To understand and read more on this, please refer to this <a href="https://medium.com/@mweststrate/becoming-fully-reactive-an-in-depth-explanation-of-mobservable-55995262a254">blog</a> from the creator of Mobx, <a href="https://twitter.com/mweststrate">Michel Westrate</a>.</p>
-
 <p>Okay. Its time now to see Mobx in action.We would be using a package called <a href="https://github.com/mobxjs/mobx-angular">mobx-angular</a> which is an angular wrapper on the mobx.</p>
-
 <p>The first thing we are going to do is to create the store. Our store is going to hold the reads collection. <code>actionStatus</code> will be used to store the status of a network request.</p>
-
 <pre><code>@Injectable()
 export class GoodReadStore {
   @observable reads: GoodRead[] = [];
   @observable actionStatus: networkRequestState;
   constructor(private backendService: BackendService) {}
 
-</code></pre>
-
-<p>Next is to handle our actions. For this we would be creating different methods in our Store corresponding to different actions that could be performed in our app.</p>
-
+</code></pre><p>Next is to handle our actions. For this we would be creating different methods in our Store corresponding to different actions that could be performed in our app.</p>
 <pre><code> @action
   addNewGoodRead(read: GoodRead) {
     this.actionStatus = networkRequestState.Pending;
@@ -199,38 +178,24 @@ export class GoodReadStore {
       }
     );
   }
-</code></pre>
-
-<p>The code above handles adding a new good read in our app. <code>@action</code> is a decorator that indicates this is an mobx action where state mutation may happen. We are just invoking the backend service and creating a new collection with the newly added item.</p>
-
+</code></pre><p>The code above handles adding a new good read in our app. <code>@action</code> is a decorator that indicates this is an mobx action where state mutation may happen. We are just invoking the backend service and creating a new collection with the newly added item.</p>
 <p>Now, it time to see how to implement a derivation. Here in our app, it would be the read counter.</p>
-
 <pre><code>@computed
   get readsCounter(): number {
     console.log(`Reading counter @ ${Date.now()}`);
     return this.reads.filter(read =&gt; read.isRead).length;
   }
-</code></pre>
-
-<p>We just use the <code>@computed</code> decorator to make the <code>readsCounter</code> a derivation.</p>
-
+</code></pre><p>We just use the <code>@computed</code> decorator to make the <code>readsCounter</code> a derivation.</p>
 <p>Also if you have noticed, the code that interacts with the service would just simply do one job of interacting with the backend APIs, thus adhering to the Single Responsibility Principle.</p>
-
 <pre><code>  addNewRead(read: GoodRead) {
     const url = `${this.baseAPIRURL}/create`
     return this.http.post&lt;GoodRead&gt;(url, read);
   }
-</code></pre>
-
-<p>Now that we have setup the mobx infra, lets see how to use them from the components. Lets&rsquo;s say the user deletes a read item. All we need to do is call the delete action defined in the mobx store. The below snippet is from <code>home.component</code>.</p>
-
+</code></pre><p>Now that we have setup the mobx infra, lets see how to use them from the components. Lets&rsquo;s say the user deletes a read item. All we need to do is call the delete action defined in the mobx store. The below snippet is from <code>home.component</code>.</p>
 <pre><code>  deleteItem(id: number) {
     this.store.deleteRead(id);
   }
-</code></pre>
-
-<p>Now, lets see what are the changes in <code>home.component.html</code>.</p>
-
+</code></pre><p>Now, lets see what are the changes in <code>home.component.html</code>.</p>
 <pre><code>&lt;div class=&quot;container&quot;
   *mobxAutorun&gt;
   &lt;div class=&quot;create&quot;&gt;
@@ -247,24 +212,16 @@ export class GoodReadStore {
     &lt;/div&gt;
   &lt;/div&gt;
 &lt;/div&gt;
-</code></pre>
-
-<p>We now are directly reading the store <code>reads</code> collection. Note that there is no <code>| async</code>, instead we are using <code>*mobxAutorun</code> directive which automatically takes care of rerendering the list if there are any changes to state. This is the magic that Mobx does out of the box for us.</p>
-
+</code></pre><p>We now are directly reading the store <code>reads</code> collection. Note that there is no <code>| async</code>, instead we are using <code>*mobxAutorun</code> directive which automatically takes care of rerendering the list if there are any changes to state. This is the magic that Mobx does out of the box for us.</p>
 <p>We can also mark the home component&rsquo;s change detection strategy to OnPush as Mobx would ensure that it would trigger the change detection whenever it sees there is a change in a state that the component would be interested in. This alleviates the developers from the responsbility of making apps more performant.</p>
-
 <pre><code>Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-</code></pre>
-
-<p>That&rsquo;s all we need to do for Mobx implementation. The code is lot more concise, concerns separated and easy to code with lot of magic happening under the hood through Mobx.</p>
-
+</code></pre><p>That&rsquo;s all we need to do for Mobx implementation. The code is lot more concise, concerns separated and easy to code with lot of magic happening under the hood through Mobx.</p>
 <p>To summarize, we did the following:</p>
-
 <ul>
 <li>Created a store to hold our state</li>
 <li>Created actions which updates the state</li>
@@ -272,11 +229,8 @@ export class GoodReadStore {
 <li>Called the actions methods through the store from the Components</li>
 <li>Added the mobxAutorun directive to the component view (html) to automatically detect changes and rerender the DOM</li>
 </ul>
-
 <p>You could find the complete source code for the Mobx implementation <a href="https://github.com/sundarcodes/my-good-reads-app/tree/master/frontend/angular/mobx-based-state-management/my-good-reads-app">here</a>.</p>
-
 <p>Mobx implmentation has so far being the most easy and consise. With lot less code, we get lot of value. But sometimes this could also backfire, if you do not understand how it all works under the hood. So please make it a point to read more about how Mobx works in this <a href="https://medium.com/@mweststrate/becoming-fully-reactive-an-in-depth-explanation-of-mobservable-55995262a254">post</a>.</p>
-
 <p>See you soon in the next post on Redux !! Till then Happy learning.</p>
 </div>
 
@@ -338,7 +292,7 @@ export class GoodReadStore {
         <h4 class="page-header">Comments</h4>
 
         <div id="disqus_thread"></div>
-<script>
+<script type="application/javascript">
     var disqus_config = function () {
     
     
@@ -364,7 +318,7 @@ export class GoodReadStore {
 
         <footer>
 
-            <p class="copyright text-muted">&copy;2019</p>
+            <p class="copyright text-muted">&copy;2020</p>
 
         </footer>
        

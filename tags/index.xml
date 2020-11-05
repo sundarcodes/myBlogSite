@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on sundarcodes</title>
@@ -6,80 +6,13 @@
     <description>Recent content in Tags on sundarcodes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 01 Aug 2017 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-    <item>
-      <title>Analogy</title>
-      <link>/tags/analogy/</link>
-      <pubDate>Tue, 01 Aug 2017 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/analogy/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Angular</title>
-      <link>/tags/angular/</link>
-      <pubDate>Sat, 01 Sep 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/angular/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Angular 2&#43;</title>
-      <link>/tags/angular-2&#43;/</link>
-      <pubDate>Thu, 01 Mar 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/angular-2&#43;/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Angularjs</title>
-      <link>/tags/angularjs/</link>
-      <pubDate>Sat, 25 Mar 2017 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/angularjs/</guid>
-      <description></description>
-    </item>
-    
+    <lastBuildDate>Thu, 20 Dec 2018 00:00:00 +0000</lastBuildDate><atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Backend</title>
       <link>/tags/backend/</link>
       <pubDate>Thu, 20 Dec 2018 00:00:00 +0000</pubDate>
       
       <guid>/tags/backend/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Best Practices</title>
-      <link>/tags/best-practices/</link>
-      <pubDate>Sat, 08 Apr 2017 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/best-practices/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Change Detection</title>
-      <link>/tags/change-detection/</link>
-      <pubDate>Mon, 11 Dec 2017 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/change-detection/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Change Detection Strategy</title>
-      <link>/tags/change-detection-strategy/</link>
-      <pubDate>Thu, 04 Jan 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/change-detection-strategy/</guid>
       <description></description>
     </item>
     
@@ -93,24 +26,6 @@
     </item>
     
     <item>
-      <title>Editor</title>
-      <link>/tags/editor/</link>
-      <pubDate>Thu, 20 Sep 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/editor/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Front End Basics</title>
-      <link>/tags/front-end-basics/</link>
-      <pubDate>Tue, 01 Aug 2017 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/front-end-basics/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Frontend</title>
       <link>/tags/frontend/</link>
       <pubDate>Thu, 20 Dec 2018 00:00:00 +0000</pubDate>
@@ -120,65 +35,20 @@
     </item>
     
     <item>
-      <title>Git</title>
-      <link>/tags/git/</link>
-      <pubDate>Sat, 08 Apr 2017 00:00:00 +0000</pubDate>
+      <title>Tech stack</title>
+      <link>/tags/tech-stack/</link>
+      <pubDate>Thu, 20 Dec 2018 00:00:00 +0000</pubDate>
       
-      <guid>/tags/git/</guid>
+      <guid>/tags/tech-stack/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Javascript</title>
-      <link>/tags/javascript/</link>
-      <pubDate>Wed, 06 Sep 2017 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/javascript/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Lint</title>
-      <link>/tags/lint/</link>
-      <pubDate>Thu, 20 Sep 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/lint/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Mobx</title>
-      <link>/tags/mobx/</link>
-      <pubDate>Thu, 04 Jan 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/mobx/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Mysql</title>
+      <title>mysql</title>
       <link>/tags/mysql/</link>
       <pubDate>Thu, 11 Oct 2018 00:00:00 +0000</pubDate>
       
       <guid>/tags/mysql/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Ngrx</title>
-      <link>/tags/ngrx/</link>
-      <pubDate>Thu, 01 Mar 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/ngrx/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Observables</title>
-      <link>/tags/observables/</link>
-      <pubDate>Fri, 15 Dec 2017 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/observables/</guid>
       <description></description>
     </item>
     
@@ -192,11 +62,65 @@
     </item>
     
     <item>
-      <title>Productivity</title>
+      <title>sql query tuning</title>
+      <link>/tags/sql-query-tuning/</link>
+      <pubDate>Thu, 11 Oct 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/sql-query-tuning/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>editor</title>
+      <link>/tags/editor/</link>
+      <pubDate>Thu, 20 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/editor/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>lint</title>
+      <link>/tags/lint/</link>
+      <pubDate>Thu, 20 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/lint/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>productivity</title>
       <link>/tags/productivity/</link>
       <pubDate>Thu, 20 Sep 2018 00:00:00 +0000</pubDate>
       
       <guid>/tags/productivity/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>tools</title>
+      <link>/tags/tools/</link>
+      <pubDate>Thu, 20 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/tools/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>web-development</title>
+      <link>/tags/web-development/</link>
+      <pubDate>Thu, 20 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/web-development/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Angular</title>
+      <link>/tags/angular/</link>
+      <pubDate>Sat, 01 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/angular/</guid>
       <description></description>
     </item>
     
@@ -210,38 +134,29 @@
     </item>
     
     <item>
+      <title>Angular 2&#43;</title>
+      <link>/tags/angular-2&#43;/</link>
+      <pubDate>Thu, 01 Mar 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/angular-2&#43;/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ngRx</title>
+      <link>/tags/ngrx/</link>
+      <pubDate>Thu, 01 Mar 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/ngrx/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Redux</title>
       <link>/tags/redux/</link>
       <pubDate>Thu, 01 Mar 2018 00:00:00 +0000</pubDate>
       
       <guid>/tags/redux/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Rxjs</title>
-      <link>/tags/rxjs/</link>
-      <pubDate>Fri, 15 Dec 2017 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/rxjs/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Services</title>
-      <link>/tags/services/</link>
-      <pubDate>Mon, 11 Dec 2017 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/services/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Sql Query Tuning</title>
-      <link>/tags/sql-query-tuning/</link>
-      <pubDate>Thu, 11 Oct 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/sql-query-tuning/</guid>
       <description></description>
     </item>
     
@@ -255,16 +170,79 @@
     </item>
     
     <item>
-      <title>Tech Stack</title>
-      <link>/tags/tech-stack/</link>
-      <pubDate>Thu, 20 Dec 2018 00:00:00 +0000</pubDate>
+      <title>what to choose</title>
+      <link>/tags/what-to-choose/</link>
+      <pubDate>Thu, 01 Mar 2018 00:00:00 +0000</pubDate>
       
-      <guid>/tags/tech-stack/</guid>
+      <guid>/tags/what-to-choose/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Terminologies</title>
+      <title>Change Detection Strategy</title>
+      <link>/tags/change-detection-strategy/</link>
+      <pubDate>Thu, 04 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/change-detection-strategy/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Mobx</title>
+      <link>/tags/mobx/</link>
+      <pubDate>Thu, 04 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/mobx/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Observables</title>
+      <link>/tags/observables/</link>
+      <pubDate>Fri, 15 Dec 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/observables/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>RxJS</title>
+      <link>/tags/rxjs/</link>
+      <pubDate>Fri, 15 Dec 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/rxjs/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Change Detection</title>
+      <link>/tags/change-detection/</link>
+      <pubDate>Mon, 11 Dec 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/change-detection/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Services</title>
+      <link>/tags/services/</link>
+      <pubDate>Mon, 11 Dec 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/services/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>JavaScript</title>
+      <link>/tags/javascript/</link>
+      <pubDate>Wed, 06 Sep 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/javascript/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>terminologies</title>
       <link>/tags/terminologies/</link>
       <pubDate>Wed, 06 Sep 2017 00:00:00 +0000</pubDate>
       
@@ -273,16 +251,43 @@
     </item>
     
     <item>
-      <title>Tools</title>
-      <link>/tags/tools/</link>
-      <pubDate>Thu, 20 Sep 2018 00:00:00 +0000</pubDate>
+      <title>analogy</title>
+      <link>/tags/analogy/</link>
+      <pubDate>Tue, 01 Aug 2017 00:00:00 +0000</pubDate>
       
-      <guid>/tags/tools/</guid>
+      <guid>/tags/analogy/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Version Control</title>
+      <title>front-end-basics</title>
+      <link>/tags/front-end-basics/</link>
+      <pubDate>Tue, 01 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/front-end-basics/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>best-practices</title>
+      <link>/tags/best-practices/</link>
+      <pubDate>Sat, 08 Apr 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/best-practices/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>git</title>
+      <link>/tags/git/</link>
+      <pubDate>Sat, 08 Apr 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/git/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>version-control</title>
       <link>/tags/version-control/</link>
       <pubDate>Sat, 08 Apr 2017 00:00:00 +0000</pubDate>
       
@@ -291,20 +296,11 @@
     </item>
     
     <item>
-      <title>Web Development</title>
-      <link>/tags/web-development/</link>
-      <pubDate>Thu, 20 Sep 2018 00:00:00 +0000</pubDate>
+      <title>angularJS</title>
+      <link>/tags/angularjs/</link>
+      <pubDate>Sat, 25 Mar 2017 00:00:00 +0000</pubDate>
       
-      <guid>/tags/web-development/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>What to Choose</title>
-      <link>/tags/what-to-choose/</link>
-      <pubDate>Thu, 01 Mar 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/what-to-choose/</guid>
+      <guid>/tags/angularjs/</guid>
       <description></description>
     </item>
     

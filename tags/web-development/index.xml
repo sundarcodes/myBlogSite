@@ -1,16 +1,12 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Web Development on sundarcodes</title>
+    <title>web-development on sundarcodes</title>
     <link>/tags/web-development/</link>
-    <description>Recent content in Web Development on sundarcodes</description>
+    <description>Recent content in web-development on sundarcodes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 20 Sep 2018 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="/tags/web-development/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Thu, 20 Sep 2018 00:00:00 +0000</lastBuildDate><atom:link href="/tags/web-development/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Tools that make me productive - Web Development</title>
       <link>/post/tools-that-make-me-productive/</link>

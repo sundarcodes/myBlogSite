@@ -1,16 +1,12 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>What to Choose on sundarcodes</title>
+    <title>what to choose on sundarcodes</title>
     <link>/tags/what-to-choose/</link>
-    <description>Recent content in What to Choose on sundarcodes</description>
+    <description>Recent content in what to choose on sundarcodes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 01 Mar 2018 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="/tags/what-to-choose/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Thu, 01 Mar 2018 00:00:00 +0000</lastBuildDate><atom:link href="/tags/what-to-choose/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>State Management in Angular 2&#43; apps - Part 6 - Conclusion</title>
       <link>/post/ui-state-management-part-6/</link>

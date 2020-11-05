@@ -58,7 +58,7 @@
 
 
 <script>$(document).on('click', function() { $('.collapse').collapse('hide'); })</script>
- <meta name="generator" content="Hugo 0.31.1" />
+ <meta name="generator" content="Hugo 0.76.5" />
         
         
         
@@ -139,51 +139,29 @@
 </div>
 
 
-    <br> <div class="text-justify">
-
-<p>In <a href="/post/ui-state-management-part-1/">part-1</a> of this series, we got to know what state is and the need to have a state management solution especially in the case of a large web app. In this post, we will be seeing how we can solve our shared state problem using Observables. We will also see how we can overcome the pitfalls of the Angular services approach discussed in <a href="/post/ui-state-management-part-2/">part-2</a> of this series.</p>
-
+    <br> <div class="text-justify"><p>In <a href="/post/ui-state-management-part-1/">part-1</a> of this series, we got to know what state is and the need to have a state management solution especially in the case of a large web app. In this post, we will be seeing how we can solve our shared state problem using Observables. We will also see how we can overcome the pitfalls of the Angular services approach discussed in <a href="/post/ui-state-management-part-2/">part-2</a> of this series.</p>
 <p>Observables is something that I have seen which unsettles developers. It does take some time to settle in especially people coming from a imperative background. We will be using RxJS, a library that implements observables and a load of other operators. Warning - RxJS again has a steep learning curve. You must give it time to sink in if you are new to this.</p>
-
-<h4 id="what-why-observables">What/Why Observables ?</h4>
-
+<h4 id="whatwhy-observables-">What/Why Observables ?</h4>
 <p>Let me try to explain this in the context of state management. Observables provides a mechanism to link a piece of data or state with a view or component that is interested in it by employing the <a href="https://en.wikipedia.org/wiki/Observer_pattern">Observer</a> Design Pattern. It simply connects the data or a subject to a list of Components or Observers. RxJS is the library which has the implementation of Observables. Infact, Angular has RxJS as a part of its dependency as the framework heavily uses these concepts and tonns of other utitlities in the RxJS library. If you need a detailed explaination, please do read this wonderful <a href="https://medium.com/@benlesh/learning-observable-by-building-observable-d5da57405d87">blog</a> by the author of RxJS 5 BenLesh. One other misunderstanding of Observables is that its used for your async events like XHR, setTimeout etc. As clarified in BenLesh&rsquo;s blog post, Observables can be sync or async and it depends on the data source type. If the data has to be fetched from a backend, the observable would turn out to be async or if the data source is just an array stored in your service, it would be sync in nature.</p>
-
-<h4 id="how-are-we-going-to-implement-observables">How are we going to implement Observables ?</h4>
-
+<h4 id="how-are-we-going-to-implement-observables-">How are we going to implement Observables ?</h4>
 <p>Now that we got the fundas out, lets look at how Observables and the RxJS library are going to help us manage our state. Talking in terms of the Observer pattern, our list of reads is going to be the subject which our home component and navbar component would be interested in. So we are going to wrap our shared state which is the <code>reads</code> collection inside a subject using RxJS BehaviorSubject class.</p>
-
 <pre><code>  private readsSubject: BehaviorSubject&lt;GoodRead[]&gt;;
   public allReads$: Observable&lt;GoodRead[]&gt;;
   public readsCounter$: Observable&lt;number&gt;;
-</code></pre>
-
-<p>We are declaring 3 variable here. <code>readsSubject</code> which is going to hold our reads collections and hence the term subject. <code>allReads$</code> is an observable which the home component would be interested in and <code>readsCounter$</code> is other obserable which the navbar component would need to be hooked into. We are basically modelling our state management problem to fit into solution given by the Observer pattern. BTW, prefixing a variable with <code>$</code> is just a convention to indicate it is an Observable type.</p>
-
+</code></pre><p>We are declaring 3 variable here. <code>readsSubject</code> which is going to hold our reads collections and hence the term subject. <code>allReads$</code> is an observable which the home component would be interested in and <code>readsCounter$</code> is other obserable which the navbar component would need to be hooked into. We are basically modelling our state management problem to fit into solution given by the Observer pattern. BTW, prefixing a variable with <code>$</code> is just a convention to indicate it is an Observable type.</p>
 <p>For the question on why we are using a BehaviorSubject instead of Subject, please look <a href="https://stackoverflow.com/a/40231605">here</a>.</p>
-
 <p>One more point that you can notice is, we have declared our subject as private and observables as public. This is to take advantage of the encapsulation features that typescript gives to inadvertently get access to the subject outside the service and updating it. You may also wonder, how we are going tie up the observables from the subject. Well, here we go. We do that in the contructor.</p>
-
 <pre><code>constructor(private http: HttpClient) {
     this.readsSubject = new BehaviorSubject([]);
     this.allReads$ = this.readsSubject.asObservable();
     this.readsCounter$ = this.allReads$.map((arr: GoodRead[]) =&gt; arr.filter(read =&gt; read.isRead).length);
   }
-</code></pre>
-
-<p>There is an <code>asObservable()</code> api exposed on the Subject which returns an observable hooked on to that subject. Any one interested in subscribing to this subject, could do so by subscribing to this observable. We could also directly subscribe to the Subject but that would mean exposing the Subject out to the consumers which violates the encapsulation principle. For the <code>readCounter$</code> observable, we would just need to send out the number of good reads. Observables have a load of operators just like we have in <code>underscore</code> or <code>lodash</code> with which we could get the reads count out. It is similar to what we did in the Angular services approach.</p>
-
+</code></pre><p>There is an <code>asObservable()</code> api exposed on the Subject which returns an observable hooked on to that subject. Any one interested in subscribing to this subject, could do so by subscribing to this observable. We could also directly subscribe to the Subject but that would mean exposing the Subject out to the consumers which violates the encapsulation principle. For the <code>readCounter$</code> observable, we would just need to send out the number of good reads. Observables have a load of operators just like we have in <code>underscore</code> or <code>lodash</code> with which we could get the reads count out. It is similar to what we did in the Angular services approach.</p>
 <p>Now in our components, all we need to do is to subscribe on these observables using Angular <code>async</code> pipe.</p>
-
 <pre><code>  &lt;div class=&quot;col-sm-4&quot;
       *ngFor=&quot;let readItem of backendService.allReads$ | async&quot;&gt;
-</code></pre>
-
-<pre><code>  &lt;span class=&quot;badge badge-primary badge-pill&quot;&gt;{{backendService.readsCounter$ | async}}&lt;/span&gt;
-</code></pre>
-
-<p>You would be interested to know how the subject is getting updated, for instance lets say when we mark an item as read. Below it the code for that.</p>
-
+</code></pre><pre><code>  &lt;span class=&quot;badge badge-primary badge-pill&quot;&gt;{{backendService.readsCounter$ | async}}&lt;/span&gt;
+</code></pre><p>You would be interested to know how the subject is getting updated, for instance lets say when we mark an item as read. Below it the code for that.</p>
 <pre><code>  markItem(id: number, isRead: boolean) {
     const url = `${this.baseAPIRURL}/update/${id}`;
     return this.http.patch&lt;GoodRead&gt;(url, {
@@ -196,38 +174,25 @@
         this.readsSubject.next(allReads);
       })
   }
-</code></pre>
-
-<p>We send a http PATCH request to the backend and once we get the response, we get the currently stored data in the subject using <code>getValue()</code>, then update the item that is marked and finally publish the updated array using <code>next()</code>. When we do a next on a subject, it triggers the call back function passed in the <code>subscribe</code> api of all the observables interested in this subject. You could see below in the home component, this markItem() function is being subscribed and you would see the log whenenver you check or uncheck an item.</p>
-
+</code></pre><p>We send a http PATCH request to the backend and once we get the response, we get the currently stored data in the subject using <code>getValue()</code>, then update the item that is marked and finally publish the updated array using <code>next()</code>. When we do a next on a subject, it triggers the call back function passed in the <code>subscribe</code> api of all the observables interested in this subject. You could see below in the home component, this markItem() function is being subscribed and you would see the log whenenver you check or uncheck an item.</p>
 <pre><code> toggleItemRead(id: number, isRead: boolean) {
     this.subscriptions = this.backendService.markItem(id, isRead)
       .subscribe(() =&gt; {
         console.log(`Item marked as ${isRead ? 'read' : 'unread'}`);
       });
   }
-</code></pre>
-
-<p>Well, if you are getting to know about Observables/RxJS for the first time, this may feel little overwhelming initially, but once you get your head around it, you would really appreciate it. It took me good part of 3 months to get a basic understanding of it all works and am still continuing to learn. So just be patient&hellip; By the looks of it, Observable could soon land up as a part of the browser API soon. Check out <a href="https://github.com/whatwg/dom/issues/544">this</a>.</p>
-
+</code></pre><p>Well, if you are getting to know about Observables/RxJS for the first time, this may feel little overwhelming initially, but once you get your head around it, you would really appreciate it. It took me good part of 3 months to get a basic understanding of it all works and am still continuing to learn. So just be patient&hellip; By the looks of it, Observable could soon land up as a part of the browser API soon. Check out <a href="https://github.com/whatwg/dom/issues/544">this</a>.</p>
 <p>Ok, coming back to our state management problem. Lets see how this approach eliminates the pitfalls of Angular Services approach discussed in <a href="/post/ui-state-management-part-2/">part-2</a>.</p>
-
 <h4 id="no-longer-have-to-rely-on-angular-change-detection">No longer have to rely on Angular Change Detection</h4>
-
 <p>Now, we would no longer need to depend on Angular&rsquo;s Change Detection mechanism to check and rerender the DOM whenever there is a change in the reference or value of variable referenced in the html. As we have implemented the Observer Pattern here through Observables/Subject, we could be rest assured that the view would get the updates whenever there is a change in actual state, here in our case the reads collection. We could now take advantage of this and make the <code>read-card</code> component&rsquo;s change detection strategy to be OnPush.</p>
-
 <pre><code>@Component({
   selector: 'app-read-card',
   templateUrl: './read-card.component.html',
   styleUrls: ['./read-card.component.css'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-</code></pre>
-
-<p>This will notify Angular not to check this component&rsquo;s variables for any changes when running the Change detection algorithm. For a more in depth post on how Change Detection works, please refer <a href="https://vsavkin.com/change-detection-in-angular-2-4f216b855d4c">here</a>.</p>
-
+</code></pre><p>This will notify Angular not to check this component&rsquo;s variables for any changes when running the Change detection algorithm. For a more in depth post on how Change Detection works, please refer <a href="https://vsavkin.com/change-detection-in-angular-2-4f216b855d4c">here</a>.</p>
 <p>This is big plus especially for making apps more performant as we are avoding costly checks by resorting to OnPush change detection strategy. A component marked with OnPush get rerendered only when there is a change in its inputs (reference or value). So we have to ensure that the refernce or value gets changed whenever we do an update on the <code>reads</code> data. For instance, while marking an item to be read or unread, it is important that we update the <code>reads</code> subject with a new object having the updated data instead of updating the data in place. Notice below that we are replacing the object to the updated in the array with a new object coming as the response from the backend.</p>
-
 <pre><code> markItem(id: number, isRead: boolean) {
     const url = `${this.baseAPIRURL}/update/${id}`;
     return this.http.patch&lt;GoodRead&gt;(url, {
@@ -240,10 +205,7 @@
         this.readsSubject.next(allReads);
       })
   }
-</code></pre>
-
-<p>These are some of things that we should be extra cautious when dealing with OnPush Change Detection. The onus falls on the developers to implement things in such a way, the Change Detection works properly and value gets updated in the DOM. This is where libraries like <a href="https://facebook.github.io/immutable-js/">immutable.js</a> could help which implements Immutable amd Persitent Data structures which would always yield a new value on whatever operations you perform on the value.</p>
-
+</code></pre><p>These are some of things that we should be extra cautious when dealing with OnPush Change Detection. The onus falls on the developers to implement things in such a way, the Change Detection works properly and value gets updated in the DOM. This is where libraries like <a href="https://facebook.github.io/immutable-js/">immutable.js</a> could help which implements Immutable amd Persitent Data structures which would always yield a new value on whatever operations you perform on the value.</p>
 <p>With that we come to end of this part. Hope you got an essence of how RxJS Subjects and Observables work, how Angular Change Detection works and also how using immutable collection would help us in building more predictive apps. The source code of the app implementing this strategy could be found <a href="https://github.com/sundarcodes/my-good-reads-app/tree/master/frontend/angular/observables-based-state-management/my-good-reads-app">here</a>.</p>
 </div>
 
@@ -305,7 +267,7 @@
         <h4 class="page-header">Comments</h4>
 
         <div id="disqus_thread"></div>
-<script>
+<script type="application/javascript">
     var disqus_config = function () {
     
     
@@ -331,7 +293,7 @@
 
         <footer>
 
-            <p class="copyright text-muted">&copy;2019</p>
+            <p class="copyright text-muted">&copy;2020</p>
 
         </footer>
        
